@@ -1,0 +1,27 @@
+@import '../sass/normalize.css';
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../assets/fonts/Futura\ Book\ font.ttf') format('truetype'),
+    url('../assets/fonts/futura\ medium\ bt.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Yeseva One';
+  src: url('../assets/fonts/YesevaOne-Regular.ttf') format('truetype');
+}
+
+$main-color: #e3b873;
+
+.page_wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #131313;
+  &-bg-light {
+    background-color: #ffffff;
+  }
+}
+
+* {
+  color: red;
+}
