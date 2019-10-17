@@ -197,3 +197,138 @@ $main-color: #e3b873;
     border: 1px solid #ffffff;
   }
 }
+
+.work_examples_section {
+  display: grid;
+  grid-template-areas:
+    '. names'
+    'info carousel'
+    'params carousel'
+    'slider carousel';
+  padding-left: 7.02%;
+  &--project_names {
+    grid-area: names;
+  }
+  &--info {
+    grid-area: info;
+  }
+  &--caption {
+    max-width: 155px;
+    font-family: 'Yeseva One';
+    font-size: 27px;
+    line-height: 37px;
+    letter-spacing: -0.07em;
+    text-transform: uppercase;
+    color: $main-color;
+    &::after {
+    }
+  }
+  &--note {
+    max-width: 442px;
+    font-family: 'Futura';
+    font-size: 18px;
+    line-height: 29px;
+    color: #ffffff;
+  }
+  &--params_list {
+    grid-area: params;
+  }
+  &--slider {
+    grid-area: slider;
+  }
+  &--carousel {
+    grid-area: carousel;
+  }
+}
+
+.project_list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  max-width: 623px;
+  &--item {
+    padding: 0 10px;
+  }
+  &--link {
+    text-decoration: none;
+    font-family: 'Yeseva One';
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    &-active {
+      color: $main-color;
+      border-bottom: 1px solid $main-color;
+      padding-bottom: 3px;
+    }
+  }
+}
+
+.project_params {
+  display: grid;
+  grid-template: auto auto/1fr 1fr;
+  padding-left: 0;
+  list-style-type: none;
+  &--parameter {
+    font-family: 'Yeseva One';
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: $main-color;
+  }
+  &--parameter_details {
+    display: block;
+    font-family: 'Futura';
+    font-size: 15px;
+    line-height: 20px;
+    color: #ffffff;
+    text-transform: none;
+  }
+}
+
+.arrow_slider {
+  list-style-type: none;
+  &--breakpoint {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 9px;
+    border-radius: 10px;
+    font-size: 0;
+    background-color: #ffffff;
+    opacity: 0.3;
+    &-active {
+      opacity: 1;
+    }
+  }
+  &::after {
+    content: url('../assets/icons/arrow.png');
+    display: inline-block;
+    width: 42px;
+    height: 13px;
+    transform: rotate(180deg);
+  }
+  &::before {
+    content: url('../assets/icons/arrow.png');
+    display: inline-block;
+    width: 42px;
+    height: 13px;
+  }
+}
+
+.carousel_container {
+  max-height: 482px;
+  overflow: hidden;
+  white-space: nowrap;
+  &--img_block {
+    display: inline-block;
+    max-width: 679px;
+    padding-left: 20px;
+    font-size: 0;
+    box-shadow: 0px 50px 30px rgba(0, 0, 0, 0.15);
+  }
+  &--img {
+    width: 100%;
+    height: 100%;
+  }
+}
