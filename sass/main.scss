@@ -332,3 +332,63 @@ $main-color: #e3b873;
     height: 100%;
   }
 }
+
+.main_container {
+  text-align: center;
+  &--title {
+    padding-bottom: 13px;
+    font-family: 'Yeseva One';
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #181818;
+    &--on_dark_bg {
+      color: #ffffff;
+    }
+  }
+  &--icon {
+    display: block;
+    margin: 0 auto;
+  }
+  &--info {
+    margin: 0 auto;
+    font-family: 'Futura';
+    font-size: 20px;
+    line-height: 34px;
+    color: #363636;
+  }
+}
+
+.broadcast_container {
+  &--video_box {
+    display: inline-block;
+    width: 817px;
+    height: 434px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+    background: url('../assets/images/poster.png') rgba(0, 0, 0, 0.8);
+    background-blend-mode: color;
+    margin: 0 auto;
+    font-size: 0;
+    &::after {
+    }
+  }
+  &--info {
+    max-width: 681px;
+  }
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &--play_button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 85px;
+    height: 85px;
+    transform: translate(-50%, -50%);
+    border-radius: 85px;
+    background: url('../assets/icons/polygon.svg') no-repeat 50% 50% $main-color;
+  }
+}
