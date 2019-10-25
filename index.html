@@ -7,30 +7,38 @@
     <title>repair-design-project</title>
   </head>
   <body class="body">
-    <div class="page_wrap">
-      <header class="header">
-        <div class="header--wrapper">
-          <span class="header--logo logo">IC "Repair Design Project"</span>
-          <div class="header--nav_box">
-            <nav class="main_nav">
-              <a href="#" class="main_nav--link main_nav--link-active">HOME</a>
-              <a href="#" class="main_nav--link">PROJECTS</a>
-              <a href="#" class="main_nav--link">MEASUREMENT</a>
-              <a href="#" class="main_nav--link">TEAM</a>
-              <a href="#" class="main_nav--link">REVIEWS</a>
-              <a href="#" class="main_nav--link">CONTACTS</a>
-            </nav>
+    <header class="header">
+      <div class="wrap">
+        <div class="wrap--content">
+          <div class="header_inner--wrapper">
+            <span class="header_inner--logo logo"
+              >IC "Repair Design Project"</span
+            >
+            <div class="header_inner--nav_box">
+              <nav class="main_nav">
+                <a href="#" class="main_nav--link main_nav--link-active"
+                  >HOME</a
+                >
+                <a href="#" class="main_nav--link">PROJECTS</a>
+                <a href="#" class="main_nav--link">MEASUREMENT</a>
+                <a href="#" class="main_nav--link">TEAM</a>
+                <a href="#" class="main_nav--link">REVIEWS</a>
+                <a href="#" class="main_nav--link">CONTACTS</a>
+              </nav>
+            </div>
+            <a class="header_inner--contact_number" href="tel:+79287683239"
+              >+7 (928) 768-32-39</a
+            >
+            <button class="header_inner--call_button button button-size-s">
+              Request a call
+            </button>
           </div>
-          <a class="header--contact_number" href="tel:+79287683239"
-            >+7 (928) 768-32-39</a
-          >
-          <button class="header--call_button button button-size-s">
-            Request a call
-          </button>
         </div>
-      </header>
-      <main class="main">
-        <div class="page_wrap-bg-dark">
+      </div>
+    </header>
+    <main class="main">
+      <div class="wrap">
+        <div class="wrap--content">
           <section class="promo_section">
             <div class="promo_section--socials_box">
               <a href="#" class="promo_section--social_link">INSTAGRAM</a>
@@ -134,7 +142,10 @@
             </div>
           </section>
         </div>
-        <div class="page_wrap-bg-light">
+      </div>
+
+      <div class="wrap-color-white">
+        <div class="wrap--content">
           <div class="broadcast_container main_container">
             <h3 class="main_container--title main_container--title-on_dark_bg">
               online control
@@ -157,8 +168,38 @@
               request below and you will receive a link to the broadcast.
             </p>
           </div>
-          <!--!TODO-->
-          <div class="submit_form_container"></div>
+          <div class="broadcast_container--form_container">
+            <form
+              action="get link to broadcast"
+              method="GET"
+              class="broadcast_container--form"
+            >
+              <div class="input_container">
+                <label for="name" class="input_container--input_title"></label>
+                <input type="text" class="input_container--input" />
+              </div>
+              <div class="input_container">
+                <label for="name" class="input_container--input_title"></label>
+                <input type="text" class="input_container--input" />
+              </div>
+              <button
+                class="button broadcast_container--submit_button"
+                type="submit"
+              >
+                submit
+              </button>
+              <div class="checkbox_container">
+                <input
+                  class="checkbox_container--checkbox"
+                  type="checkbox"
+                  name="agreement"
+                  id="agree"
+                /><label class="checkbox_container--checkbox_title" for="agree"
+                  >I agree to the processing of personal data</label
+                >
+              </div>
+            </form>
+          </div>
 
           <div class="repair_types_container main_container">
             <h3 class="main_container--title main_container--title-on_dark_bg">
@@ -169,196 +210,315 @@
               alt="repair_types_container_icon"
               class="repair_types_container--icon main_container--icon"
             />
-            <ul class="card_list">
-              <li class="card_list--item">
-                <div class="card">
-                  <img
-                    src="./assets/images/redecorating.png"
-                    alt="redecorating_type"
-                    class="card--image"
-                  />
-                  <div class="card--full_info">
-                    <div class="card_details">
-                      <h4 class="card_details--title">Redecorating</h4>
-                      <ul class="card_details--list">
-                        <li class="card_details--item">
-                          Dismantling of old coatings
-                        </li>
-                        <li class="card_details--item">Wallpapering</li>
-                        <li class="card_details--item">
-                          Painting walls and ceilings
-                        </li>
-                        <li class="card_details--item">Laying flooring</li>
-                        <li class="card_details--item">Replacing plumbing</li>
-                        <li class="card_details--item">
-                          Replacing sockets and switches
-                        </li>
-                        <li class="card_details--item">Replacing doors</li>
-                      </ul>
-                    </div>
-                    <div class="card_details--add_box">
-                      <span class="card_details--add_text"
-                        >from 900 rub / m2</span
-                      >
-                    </div>
+            <ul class="card_list repair_types_container--card_list">
+              <li class="card card_list--item">
+                <img
+                  src="./assets/images/redecorating.png"
+                  alt="redecorating_type"
+                  class="card--image"
+                />
+                <div class="card--full_info">
+                  <div class="card_details">
+                    <h4 class="card_details--title">Redecorating</h4>
+                    <ul class="card_details--list">
+                      <li class="card_details--item">
+                        Dismantling of old coatings
+                      </li>
+                      <li class="card_details--item">Wallpapering</li>
+                      <li class="card_details--item">
+                        Painting walls and ceilings
+                      </li>
+                      <li class="card_details--item">Laying flooring</li>
+                      <li class="card_details--item">Replacing plumbing</li>
+                      <li class="card_details--item">
+                        Replacing sockets and switches
+                      </li>
+                      <li class="card_details--item">Replacing doors</li>
+                    </ul>
+                  </div>
+                  <div class="card_details--add_box">
+                    <span class="card_details--add_text"
+                      >from 900 rub / m2</span
+                    >
                   </div>
                 </div>
               </li>
-              <li class="card_list--item">
-                <div class="card">
-                  <img
-                    src="./assets/images/overhaul.png"
-                    alt="overhaul_type"
-                    class="card--image"
-                  />
-                  <div class="card--full_info">
-                    <div class="card_details">
-                      <h4 class="card_details--title">Overhaul</h4>
-                      <ul class="card_details--list">
-                        <li class="card_details--item">
-                          Dismantling of old coatings
-                        </li>
-                        <li class="card_details--item">Wallpapering</li>
-                        <li class="card_details--item">
-                          Painting walls and ceilings
-                        </li>
-                        <li class="card_details--item">Laying flooring</li>
-                        <li class="card_details--item">Replacing plumbing</li>
-                        <li class="card_details--item">
-                          Replacing sockets and switches
-                        </li>
-                        <li class="card_details--item">Replacing doors</li>
-                      </ul>
-                    </div>
-                    <div class="card_details--add_box">
-                      <span class="card_details--add_text"
-                        >from 1800 rub / m2</span
-                      >
-                    </div>
+              <li class="card card_list--item">
+                <img
+                  src="./assets/images/overhaul.png"
+                  alt="overhaul_type"
+                  class="card--image"
+                />
+                <div class="card--full_info">
+                  <div class="card_details">
+                    <h4 class="card_details--title">Overhaul</h4>
+                    <ul class="card_details--list">
+                      <li class="card_details--item">
+                        Dismantling of old coatings
+                      </li>
+                      <li class="card_details--item">Wallpapering</li>
+                      <li class="card_details--item">
+                        Painting walls and ceilings
+                      </li>
+                      <li class="card_details--item">Laying flooring</li>
+                      <li class="card_details--item">Replacing plumbing</li>
+                      <li class="card_details--item">
+                        Replacing sockets and switches
+                      </li>
+                      <li class="card_details--item">Replacing doors</li>
+                    </ul>
+                  </div>
+                  <div class="card_details--add_box">
+                    <span class="card_details--add_text"
+                      >from 1800 rub / m2</span
+                    >
                   </div>
                 </div>
               </li>
-              <li class="card_list--item">
-                <div class="card">
-                  <img
-                    src="./assets/images/des_repair.png"
-                    alt="designer_repair_type"
-                    class="card--image"
-                  />
-                  <div class="card--full_info">
-                    <div class="card_details">
-                      <h4 class="card_details--title">Designer Repair</h4>
-                      <ul class="card_details--list">
-                        <li class="card_details--item">
-                          Dismantling of old coatings
-                        </li>
-                        <li class="card_details--item">Wallpapering</li>
-                        <li class="card_details--item">
-                          Painting walls and ceilings
-                        </li>
-                        <li class="card_details--item">Laying flooring</li>
-                        <li class="card_details--item">Replacing plumbing</li>
-                        <li class="card_details--item">
-                          Replacing sockets and switches
-                        </li>
-                        <li class="card_details--item">Replacing doors</li>
-                      </ul>
-                    </div>
-                    <div class="card_details--add_box">
-                      <span class="card_details--add_text"
-                        >from 4000 rub / m2</span
-                      >
-                    </div>
+              <li class="card card_list--item">
+                <img
+                  src="./assets/images/des_repair.png"
+                  alt="designer_repair_type"
+                  class="card--image"
+                />
+                <div class="card--full_info">
+                  <div class="card_details">
+                    <h4 class="card_details--title">Designer Repair</h4>
+                    <ul class="card_details--list">
+                      <li class="card_details--item">
+                        Dismantling of old coatings
+                      </li>
+                      <li class="card_details--item">Wallpapering</li>
+                      <li class="card_details--item">
+                        Painting walls and ceilings
+                      </li>
+                      <li class="card_details--item">Laying flooring</li>
+                      <li class="card_details--item">Replacing plumbing</li>
+                      <li class="card_details--item">
+                        Replacing sockets and switches
+                      </li>
+                      <li class="card_details--item">Replacing doors</li>
+                    </ul>
+                  </div>
+                  <div class="card_details--add_box">
+                    <span class="card_details--add_text"
+                      >from 4000 rub / m2</span
+                    >
                   </div>
                 </div>
               </li>
             </ul>
           </div>
-          <div class="advantages_container">
-            <ol class="advantages_list">
-              <li class="advantages_list--text">
-                <span class="advantages_list--number"
-                  >Our specialist will arrive for measurements per day contact,
-                  or appoint a date convenient for you</span
-                >
-              </li>
-              <li class="advantages_list--text">
-                <span class="advantages_list--number">Free metering</span>
-              </li>
-              <li class="advantages_list--text">
-                <span class="advantages_list--number">Free consultation</span>
-              </li>
-              <li class="advantages_list--text">
-                <span class="advantages_list--number"
-                  >Get a cost estimate and the timing of your future
-                  repairs</span
-                >
-              </li>
-            </ol>
-          </div>
-          <div class="advantages_container--form_box">
-            <!-- TODO -->
-          </div>
-        </div>
-        <section class="interiors_section section">
-          <div class="section--column_left">
-            <h2 class="interiors_section--slogan">
-              We realize your wildest fantasies
-            </h2>
-            <ul class="interior_list">
-              <li class="interior_list--style_name">American classic</li>
-              <li class="interior_list--style_name">Empire</li>
-              <li class="interior_list--style_name">Classical</li>
-              <li class="interior_list--style_name">Loft</li>
-              <li class="interior_list--style_name">Minimalism</li>
-              <li class="interior_list--style_name">Provence</li>
-              <li class="interior_list--style_name">Romanticism</li>
-              <li class="interior_list--style_name">Scandinavian style</li>
-              <li class="interior_list--style_name">Mediterranean style</li>
-              <li class="interior_list--style_name">High tech</li>
-              <li class="interior_list--style_name">Eclecticism</li>
-            </ul>
-          </div>
-          <div class="section--column_right">
-            <div class="interiors_section--examples-container">
-              <img
-                src="./assets/images/interior1.png"
-                alt="interior1"
-                class="interiors_section--photo"
-              />
-              <img
-                src="./assets/images/interior2.png"
-                alt="interior2"
-                class="interiors_section--photo"
-              />
-              <img
-                src="./assets/images/interior3.png"
-                alt="interior3"
-                class="interiors_section--photo"
-              />
-              <img
-                src="./assets/images/interior4.png"
-                alt="interior4"
-                class="interiors_section--photo"
-              />
+          <section class="request_section">
+            <div
+              class="advantages_container request_section--advantages_container"
+            >
+              <div class="advantages_container--ellipse_box ellipse_box">
+                <div class="ellipse_box--item">
+                  <span
+                    class="advantages_container--adv_number ellipse_box--marker"
+                    >01</span
+                  ><span
+                    class="advantages_container--adv_text ellipse_box--item_text"
+                    >Our specialist will arrive for measurements per day
+                    contact, or appoint a date convenient for you</span
+                  >
+                </div>
+                <div class="ellipse_box--item">
+                  <span
+                    class="advantages_container--adv_number ellipse_box--marker"
+                    >02</span
+                  ><span
+                    class="advantages_container--adv_text ellipse_box--item_text"
+                    >Free metering</span
+                  >
+                </div>
+                <div class="ellipse_box--item">
+                  <span
+                    class="advantages_container--adv_number ellipse_box--marker"
+                    >03</span
+                  ><span
+                    class="advantages_container--adv_text ellipse_box--item_text"
+                    >Free consultation</span
+                  >
+                </div>
+                <div class="ellipse_box--item">
+                  <span
+                    class="advantages_container--adv_number ellipse_box--marker"
+                    >04</span
+                  ><span
+                    class="advantages_container--adv_text ellipse_box--item_text"
+                    >Get a cost estimate and the timing of your future
+                    repairs</span
+                  >
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
-        <div class="design_classes_container main_container">
-          <h2 class="main_container--title">design project</h2>
-          <img
-            src="./assets/icons/design.svg"
-            alt="design_classes_container_icon"
-            class="design_classes_container--icon main_container--icon"
-          />
-          <p class="main_container--info">
-            Design project not only helps to make the repair of your apartment
-            more modern, but also significantly reduces the cost of materials
-            and reduces the time of repair work.
-          </p>
-          <ul class="card_list">
-            <li class="card_list--item">
-              <div class="card">
+            <div class="request_section--form_container">
+              <form class="request_section--form" action="#" method="GET">
+                <legend class="request_section--form_title">
+                  Leave a request for free departure of the measurer
+                </legend>
+                <div class="input_container">
+                  <label class="input_container--title" for="name">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="What is your name:"
+                    class="input_container--input"
+                  />
+                </div>
+                <div class="input_container">
+                  <label class="input_container--title" for="phone"
+                    >What is your name:</label
+                  >
+                  <input
+                    class="input_container--input"
+                    type="text"
+                    name="phone number"
+                    id="phone"
+                    placeholder="Your phone number:"
+                  />
+                </div>
+                <div class="input_container">
+                  <label class="input_container--title" for="email"
+                    >Email</label
+                  >
+                  <input
+                    class="input_container--input"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Your email"
+                  />
+                </div>
+                <div class="checkbox_container">
+                  <input
+                    class="checkbox_container--checkbox"
+                    type="checkbox"
+                    name="agreement"
+                    id="agree"
+                  /><label
+                    class="checkbox_container--checkbox_title"
+                    for="agree"
+                    >I agree to the processing of personal data</label
+                  >
+                </div>
+                <button
+                  class="button request_section--submit_button"
+                  type="submit"
+                >
+                  Call the measurer
+                </button>
+              </form>
+              <div class="bonus_container">
+                <div class="bonus_container--icon_box">
+                  <img
+                    class="bonus_container--icon"
+                    src="./assets/icons/piggy.svg"
+                    alt="piggy_icon"
+                  />
+                </div>
+                <span class="bonus_container--offer"
+                  >Help save 10 - 20% of the cost of materials</span
+                >
+              </div>
+            </div>
+          </section>
+          <section class="interiors_section">
+            <div class="interiors_section--container">
+              <h2 class="interiors_section--slogan">
+                We realize your wildest fantasies
+              </h2>
+              <ul class="interior_list">
+                <li class="interior_list--style_box">
+                  <span
+                    class="interior_list--style_name  interior_list--style_name-active"
+                    >American classic</span
+                  >
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name">Empire</span>
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name">Classical</span>
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name">Loft</span>
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name">Minimalism</span>
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name">Provence</span>
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name">Romanticism</span>
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name"
+                    >Scandinavian style</span
+                  >
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name"
+                    >Mediterranean style</span
+                  >
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name">High tech</span>
+                </li>
+                <li class="interior_list--style_box">
+                  <span class="interior_list--style_name">Eclecticism</span>
+                </li>
+              </ul>
+            </div>
+            <div class="interiors_section--photos_area">
+              <div class="interiors_section--photo_wrapper">
+                <img
+                  src="./assets/images/interior1.png"
+                  alt="interior1"
+                  class="interiors_section--photo"
+                />
+              </div>
+              <div class="interiors_section--photo_wrapper">
+                <img
+                  src="./assets/images/interior2.png"
+                  alt="interior2"
+                  class="interiors_section--photo"
+                />
+              </div>
+              <div class="interiors_section--photo_wrapper">
+                <img
+                  src="./assets/images/interior3.png"
+                  alt="interior3"
+                  class="interiors_section--photo"
+                />
+              </div>
+              <div class="interiors_section--photo_wrapper">
+                <img
+                  src="./assets/images/interior4.png"
+                  alt="interior4"
+                  class="interiors_section--photo"
+                />
+              </div>
+            </div>
+          </section>
+          <div class="design_classes_container main_container">
+            <h2 class="main_container--title">design project</h2>
+            <img
+              src="./assets/icons/design.svg"
+              alt="design_classes_container_icon"
+              class="design_classes_container--icon main_container--icon"
+            />
+            <p class="main_container--info">
+              Design project not only helps to make the repair of your apartment
+              more modern, but also significantly reduces the cost of materials
+              and reduces the time of repair work.
+            </p>
+            <ul class="card_list design_classes_container--card_list">
+              <li class="card_list--item">
                 <img
                   src="./assets/images/redecorating.png"
                   alt="mini_design_ex"
@@ -380,10 +540,8 @@
                     <span class="card_details--add_text">150 rub / m2</span>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="card_list--item">
-              <div class="card">
+              </li>
+              <li class="card_list--item">
                 <img
                   src="./assets/images/standard_design.png"
                   alt="standard_design_ex"
@@ -406,10 +564,8 @@
                     <span class="card_details--add_text">400 rub / m2</span>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="card_list--item">
-              <div class="card">
+              </li>
+              <li class="card_list--item">
                 <img
                   src="./assets/images/full_design.png"
                   alt="full_design_ex"
@@ -439,11 +595,14 @@
                     <span class="card_details--add_text">900 rub / m2</span>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="page_wrap-bg-dark">
+      </div>
+
+      <div class="wrap">
+        <div class="wrap--content">
           <section class="work_steps_section section">
             <div class="section--column_left">
               <span class="work_steps_section--note">How we are working</span>
@@ -451,11 +610,11 @@
                 6 steps to the goal
               </h3>
               <div class="step_details">
-                <span class="work_steps_section--cur-step-num">1/6</span>
-                <h4 class="work_steps_section--step-name">
+                <span class="step_details--cur_step_num">1/6</span>
+                <h4 class="step_details--step_name">
                   Departure for measurements premises
                 </h4>
-                <p class="work_steps_section--step_description">
+                <p class="step_details--step_description">
                   After your call, we go to you to consult and measure the
                   premises of your apartment. During our meeting, you can ask
                   absolutely any number of questions. An appraiser-appraiser
@@ -476,40 +635,40 @@
               </div>
             </div>
             <div class="section--column_right">
-              <ol class="steps_list work_steps_section--steps_box">
-                <li class="step_list--item">
-                  <span class="step_list--step_num"></span
-                  ><span class="step_list--step_name"
+              <ul class="step_list work_steps_section--step_list">
+                <li class="step_list--item step_list--item-active">
+                  <span class="step_list--step_num">01</span>
+                  <span class="step_list--step_name"
                     >Departure to room measurements</span
                   >
                 </li>
                 <li class="step_list--item">
-                  <span class="step_list--step_num"></span
-                  ><span class="step_list--step_name"
+                  <span class="step_list--step_num">02</span>
+                  <span class="step_list--step_name"
                     >Compilation estimates</span
                   >
                 </li>
                 <li class="step_list--item">
-                  <span class="step_list--step_num"></span
-                  ><span class="step_list--step_name"
+                  <span class="step_list--step_num">03</span>
+                  <span class="step_list--step_name"
                     >Development project design</span
                   >
                 </li>
                 <li class="step_list--item">
-                  <span class="step_list--step_num"></span
-                  ><span class="step_list--step_name">Purchasing Supplies</span>
+                  <span class="step_list--step_num">04</span>
+                  <span class="step_list--step_name">Purchasing Supplies</span>
                 </li>
                 <li class="step_list--item">
-                  <span class="step_list--step_num"></span
-                  ><span class="step_list--step_name"
+                  <span class="step_list--step_num">05</span>
+                  <span class="step_list--step_name"
                     >Repair finishing work</span
                   >
                 </li>
                 <li class="step_list--item">
-                  <span class="step_list--step_num"></span
-                  ><span class="step_list--step_name">Приемка-сдача работ</span>
+                  <span class="step_list--step_num">06</span>
+                  <span class="step_list--step_name">Приемка-сдача работ</span>
                 </li>
-              </ol>
+              </ul>
               <img
                 src="./assets/images/work_step.png"
                 alt="work_step_photo"
@@ -530,105 +689,84 @@
               Our team has helped to become happier for more than 500 families
               and we are not going to stop
             </p>
-            <ul class="card_list">
-              <li class="card_list--item">
-                <div class="card card-type-worker">
-                  <div class="card--corner_icon_box">
-                    <img
-                      src="./assets/icons/idea.svg"
-                      alt="idea_icon"
-                      class="card--corner_icon"
-                    />
-                  </div>
+            <ul class="card_list team_container--card_list">
+              <li class="worker_card">
+                <div class="worker_card--corner_icon_box">
                   <img
-                    src="./assets/images/dmitry.png"
-                    alt="dmitry_tulyakov_photo"
-                    class="card--image"
+                    src="./assets/icons/idea.svg"
+                    alt="idea_icon"
+                    class="worker_card--corner_icon"
                   />
-                  <div class="card--full_info">
-                    <div class="card_details">
-                      <h4 class="card_details--title"></h4>
-                      <ul class="card_details--list">
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                      </ul>
-                    </div>
-                    <div class="card_details--add_box">
-                      <span class="card_details--add_text"></span>
-                    </div>
+                </div>
+                <img
+                  src="./assets/images/dmitry.png"
+                  alt="dmitry_tulyakov_photo"
+                  class="worker_card--image"
+                />
+                <div class="worker_card--full_info">
+                  <h4 class="worker_card--name">Dmitry tulyakov</h4>
+                  <span class="worker_card--profession">
+                    Project manager
+                  </span>
+                  <div class="worker_card--add_box">
+                    <span class="worker_card--add_text"
+                      >Work experience 8 years</span
+                    >
                   </div>
                 </div>
               </li>
-              <li class="card_list--item">
-                <div class="card card-type-worker">
-                  <div class="card--corner_icon_box">
-                    <img
-                      src="./assets/icons/pen.svg"
-                      alt="pen_icon"
-                      class="card--corner_icon"
-                    />
-                  </div>
+              <li class="worker_card">
+                <div class="worker_card--corner_icon_box">
                   <img
-                    src="./assets/images/larisa.png"
-                    alt="larisa_kotlyarova_photo"
-                    class="card--image"
+                    src="./assets/icons/pen.svg"
+                    alt="idea_icon"
+                    class="worker_card--corner_icon"
                   />
-                  <div class="card--full_info">
-                    <div class="card_details">
-                      <h4 class="card_details--title"></h4>
-                      <ul class="card_details--list">
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                      </ul>
-                    </div>
-                    <div class="card_details--add_box">
-                      <span class="card_details--add_text"></span>
-                    </div>
+                </div>
+                <img
+                  src="./assets/images/larisa.png"
+                  alt="larisa_kotlyarova_photo"
+                  class="worker_card--image"
+                />
+                <div class="worker_card--full_info">
+                  <h4 class="worker_card--name">Larisa Kotlyarova</h4>
+                  <span class="worker_card--profession">
+                    Designer
+                  </span>
+                  <div class="worker_card--add_box">
+                    <span class="worker_card--add_text"
+                      >Work experience 6 years</span
+                    >
                   </div>
                 </div>
               </li>
-              <li class="card_list--item">
-                <div class="card card-type-worker">
-                  <div class="card--corner_icon_box">
-                    <img
-                      src="./assets/icons/portfolio.png"
-                      alt="portfolio_icon"
-                      class="card--corner_icon"
-                    />
-                  </div>
+              <li class="worker_card">
+                <div class="worker_card--corner_icon_box">
                   <img
-                    src="./assets/images/alexey.png"
-                    alt="alexey_efimov_photo"
-                    class="card--image"
+                    src="./assets/icons/portfolio.svg"
+                    alt="idea_icon"
+                    class="worker_card--corner_icon"
                   />
-                  <div class="card--full_info">
-                    <div class="card_details">
-                      <h4 class="card_details--title"></h4>
-                      <ul class="card_details--list">
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                        <li class="card_details--item"></li>
-                      </ul>
-                    </div>
-                    <div class="card_details--add_box">
-                      <span class="card_details--add_text"></span>
-                    </div>
+                </div>
+                <img
+                  src="./assets/images/alexey.png"
+                  alt="alexey_efimov_photo"
+                  class="worker_card--image"
+                />
+                <div class="worker_card--full_info">
+                  <h4 class="worker_card--name">Alexey Efimov</h4>
+                  <span class="worker_card--profession">
+                    Foreman
+                  </span>
+                  <div class="worker_card--add_box">
+                    <span class="worker_card--add_text"
+                      >Work experience 12 years</span
+                    >
                   </div>
                 </div>
               </li>
             </ul>
-            <p class="main_container--info">
+            <p class="main_container--info team_container--info">
               Each employee of our company is a qualified full-time specialist
               with work experience of 6 years. We do not have laborers and guest
               workers, each employee carries out work corresponding to his
@@ -636,79 +774,224 @@
             </p>
           </div>
         </div>
-        <div class="clients_container main_container">
-          <h2 class="main_container--title">our clients</h2>
-          <div class="main_container--icon clients_container--icon"></div>
-          <p class="main_container--info">
-            80% of our customers recommend us to their friends and family.
-          </p>
-          <ul class="card_list">
-            <li class="card_list--item">
-              <div class="card card-type-client">
-                <div class="card--full_info">
-                  <div class="card_details">
-                    <h4 class="card_details--title"></h4>
-                    <ul class="card_details--list">
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                    </ul>
+      </div>
+      <div class="wrap wrap-color-white">
+        <div class="wrap--content">
+          <div class="clients_container main_container">
+            <h2 class="main_container--title">our clients</h2>
+            <img
+              src="./assets/icons/clients.svg"
+              alt="clients_container_icon"
+              class="main_container--icon clients_container--icon"
+            />
+            <p class="main_container--info clients_container--info">
+              80% of our customers recommend us to their friends and family.
+            </p>
+            <ul class="card_list clients_container--card_list">
+              <li class="card_list--item client_card">
+                <div class="client_card--main">
+                  <img
+                    class="client_card--avatar"
+                    src="./assets/images/client1.png"
+                    alt="client_1_avatar"
+                  />
+                  <h5 class="client_card--name">
+                    Fedosova Maria Konstantinovna
+                  </h5>
+                  <p class="client_card--feedback">
+                    I want to thank the guys for their work. WE PUT YOUR SHOWER
+                    PART IN REPAIR. I am VERY grateful that I referred to the
+                    repair as to my own. GREAT THANKS I EXPRESS THE PROJECT TO
+                    GEORGIA FOR ITS PROFESSIONALISM AND APPROACH. THE REPAIR
+                    PROCESS WAS TURNED OUT IN TERMS, FASTER THAN ANTICIPATED.
+                    TEAM MOBILE AND PROFESSIONAL. WORKS PERFORMED QUALITATIVELY
+                    WITHOUT COMMENTS. QUALITY SATISFIED. PRICES DEMOCRATIC. I
+                    RECOMMEND THESE MASTERS.
+                  </p>
+                </div>
+                <div class="add_box client_card--add_box">
+                  <div class="add_box--area_sector">
+                    <span class="add_box--area">40 M2</span>
                   </div>
-                  <div class="card_details--add_box">
-                    <span class="card_details--add_text"></span>
+                  <div class="add_box--date_sector">
+                    <span class="add_box--date">48 DAYS</span>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="card_list--item">
-              <div class="card card-type-client">
-                <div class="card--full_info">
-                  <div class="card_details">
-                    <h4 class="card_details--title"></h4>
-                    <ul class="card_details--list">
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                    </ul>
+              </li>
+
+              <li class="card_list--item client_card">
+                <div class="client_card--main">
+                  <img
+                    src="./assets/images/client2.png"
+                    alt="client_2_avatar"
+                    class="client_card--avatar"
+                  />
+                  <h5 class="client_card--name">
+                    Afanasyev Sergey Alexandrovich
+                  </h5>
+                  <p class="client_card--feedback">
+                    I want to thank the guys for their work. WE PUT YOUR SHOWER
+                    PART IN REPAIR. I am VERY grateful that I referred to the
+                    repair as to my own. GREAT THANKS I EXPRESS THE PROJECT TO
+                    GEORGIA FOR ITS PROFESSIONALISM AND APPROACH. THE REPAIR
+                    PROCESS WAS TURNED OUT IN TERMS, FASTER THAN ANTICIPATED.
+                    TEAM MOBILE AND PROFESSIONAL. WORKS PERFORMED QUALITATIVELY
+                    WITHOUT COMMENTS. QUALITY SATISFIED. PRICES DEMOCRATIC. I
+                    RECOMMEND THESE MASTERS.
+                  </p>
+                </div>
+                <div class="add_box client_card--add_box">
+                  <div class="add_box--area_sector">
+                    <span class="add_box--area">90 M2</span>
                   </div>
-                  <div class="card_details--add_box">
-                    <span class="card_details--add_text"></span>
+                  <div class="add_box--date_sector">
+                    <span class="add_box--date">128 DAYS</span>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="card_list--item">
-              <div class="card card-type-client">
-                <div class="card--full_info">
-                  <div class="card_details">
-                    <h4 class="card_details--title"></h4>
-                    <ul class="card_details--list">
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                      <li class="card_details--item"></li>
-                    </ul>
+              </li>
+              <li class="card_list--item client_card">
+                <div class="client_card--main">
+                  <img
+                    src="./assets/images/client3.png"
+                    alt="client_3_avatar"
+                    class="client_card--avatar"
+                  />
+                  <h5 class="client_card--name">Kiriev Egor Leonidovich</h5>
+                  <p class="client_card--feedback">
+                    I want to thank the guys for their work. WE PUT YOUR SHOWER
+                    PART IN REPAIR. I am VERY grateful that I referred to the
+                    repair as to my own. GREAT THANKS I EXPRESS THE PROJECT TO
+                    GEORGIA FOR ITS PROFESSIONALISM AND APPROACH. THE REPAIR
+                    PROCESS WAS TURNED OUT IN TERMS, FASTER THAN ANTICIPATED.
+                    TEAM MOBILE AND PROFESSIONAL. WORKS PERFORMED QUALITATIVELY
+                    WITHOUT COMMENTS. QUALITY SATISFIED. PRICES DEMOCRATIC. I
+                    RECOMMEND THESE MASTERS.
+                  </p>
+                </div>
+                <div class="add_box client_card--add_box">
+                  <div class="add_box--area_sector">
+                    <span class="add_box--area">56 M2</span>
                   </div>
-                  <div class="card_details--add_box">
-                    <span class="card_details--add_text"></span>
+                  <div class="add_box--date_sector">
+                    <span class="add_box--date">86 DAYS</span>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="questions_form"></div>
-        <section class="contacts_section"></section>
-      </main>
-      <footer class="footer"></footer>
-    </div>
+      </div>
+      <div class="wrap">
+        <div class="wrap--content">
+          <section class="contacts_section">
+            <div class="contacts_section--form_container">
+              <form class="contacts_section--form" action="#" method="GET">
+                <legend class="contacts_section--form_title">
+                  Leave a request for free departure of the measurer
+                </legend>
+                <div class="input_container">
+                  <label class="input_container--title" for="name">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="What is your name:"
+                    class="input_container--input"
+                  />
+                </div>
+                <div class="input_container">
+                  <label class="input_container--title" for="phone"
+                    >Phone</label
+                  >
+                  <input
+                    class="input_container--input"
+                    type="text"
+                    name="phone number"
+                    id="phone"
+                    placeholder="Your phone number:"
+                  />
+                </div>
+                <div class="input_container">
+                  <label class="input_container--title" for="email"
+                    >Question</label
+                  >
+                  <input
+                    class="input_container--input"
+                    type="text"
+                    name="question"
+                    id="question"
+                    placeholder="I want tot know"
+                  />
+                </div>
+                <div class="checkbox_container">
+                  <input
+                    class="checkbox_container--checkbox"
+                    type="checkbox"
+                    name="agreement"
+                    id="agree"
+                  /><label
+                    class="checkbox_container--checkbox_title"
+                    for="agree"
+                    >I agree to the processing of personal data</label
+                  >
+                </div>
+                <button
+                  class="button request_section--submit_button"
+                  type="submit"
+                >
+                  submit
+                </button>
+              </form>
+            </div>
+            <span class="contacts_section--info"></span>
+            <span class="contacts_section--info"></span>
+            <div class="socials contacts_section--socials">
+              <a href="#" class="socials--item_link"
+                ><img src="./assets/icons/mail.svg" alt="mail icon"
+              /></a>
+              <a href="#" class="socials--item_link"
+                ><img src="./assets/icons/instagram.svg" alt="instagram icon"
+              /></a>
+            </div>
+            <div class="location_box contacts_section--location_box">
+              <img
+                src="./assets/images/map.png"
+                alt="location"
+                class="location_box--map"
+              />
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <div class="wrap--content">
+          <div class="header_inner--wrapper">
+            <span class="header_inner--logo logo"
+              >IC "Repair Design Project"</span
+            >
+            <div class="header_inner--nav_box">
+              <nav class="main_nav">
+                <a href="#" class="main_nav--link main_nav--link-active"
+                  >HOME</a
+                >
+                <a href="#" class="main_nav--link">PROJECTS</a>
+                <a href="#" class="main_nav--link">MEASUREMENT</a>
+                <a href="#" class="main_nav--link">TEAM</a>
+                <a href="#" class="main_nav--link">REVIEWS</a>
+                <a href="#" class="main_nav--link">CONTACTS</a>
+              </nav>
+            </div>
+            <a class="header_inner--contact_number" href="tel:+79287683239"
+              >+7 (928) 768-32-39</a
+            >
+            <button class="header_inner--call_button button button-size-s">
+              Request a call
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
