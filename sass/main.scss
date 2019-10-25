@@ -10,48 +10,63 @@
   font-family: 'Yeseva One';
   src: url('../assets/fonts/YesevaOne-Regular.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/ProximaNova-Regular.ttf') format('truetype');
+}
 
 $main-color: #e3b873;
 
 .page_wrap {
   max-width: 1440px;
   margin: 0 auto;
-  background-color: #131313;
   &-bg-light {
     background-color: #ffffff;
   }
+  &-bg-dark {
+    background-color: #131313;
+  }
 }
 
-* {
-  color: red;
+.wrap {
+  background-color: #131313;
+  &-color-white {
+    background-color: #ffffff;
+  }
+  &--content {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
 
 .header {
-  &--wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1276px;
-    margin: 0 auto;
-  }
-  &--nav_box {
-    flex-grow: 1;
-    padding-right: 40px;
-    padding-left: 40px;
-    text-align: center;
-  }
-  &--contact_number {
-    white-space: nowrap;
-    font-family: 'Futura';
-    font-size: 14px;
-    color: $main-color;
-    text-decoration: underline;
-  }
-  &--call_button {
-    margin-right: 20px;
-    margin-left: 3.125%;
-    margin-top: 24px;
-    margin-bottom: 22px;
+  &_inner {
+    &--wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 1276px;
+      margin: 0 auto;
+    }
+    &--nav_box {
+      flex-grow: 1;
+      padding-right: 40px;
+      padding-left: 40px;
+      text-align: center;
+    }
+    &--contact_number {
+      white-space: nowrap;
+      font-family: 'Futura';
+      font-size: 14px;
+      color: $main-color;
+      text-decoration: underline;
+    }
+    &--call_button {
+      margin-right: 20px;
+      margin-left: 3.125%;
+      margin-top: 24px;
+      margin-bottom: 22px;
+    }
   }
 }
 
@@ -342,7 +357,7 @@ $main-color: #e3b873;
     line-height: 28px;
     text-transform: uppercase;
     color: #181818;
-    &--on_dark_bg {
+    &-on_dark_bg {
       color: #ffffff;
     }
   }
@@ -356,6 +371,9 @@ $main-color: #e3b873;
     font-size: 20px;
     line-height: 34px;
     color: #363636;
+    &-on_dark_bg {
+      color: #ffffff;
+    }
   }
 }
 
@@ -391,4 +409,535 @@ $main-color: #e3b873;
     border-radius: 85px;
     background: url('../assets/icons/polygon.svg') no-repeat 50% 50% $main-color;
   }
+}
+
+.card_list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style-type: none;
+  &--item:not(:last-child) {
+    padding-right: 20px;
+  }
+}
+
+.repair_types_container {
+  &--card_list {
+    max-width: 1236px;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  max-width: 392px;
+  &--image {
+    width: 100%;
+    max-height: 421px;
+  }
+  &--full_info {
+    transform: translate(0, -127px);
+    max-width: 330px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+}
+
+.card_details {
+  padding-left: 10%;
+  background-color: #ffffff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  &--title {
+    font-family: 'Yeseva One';
+    font-size: 18px;
+    line-height: 25px;
+    color: #363636;
+  }
+  &--list {
+    padding-left: 0;
+    list-style: disc inside;
+    font-family: 'Futura';
+    font-size: 15px;
+    line-height: 25px;
+    color: #959595;
+  }
+  &--item {
+  }
+  &--add_box {
+    max-width: 228px;
+    height: 54px;
+    font-size: 18px;
+    line-height: 54px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Yeseva One';
+    background-color: $main-color;
+    color: #ffffff;
+    transform: translate(0, -50%);
+  }
+}
+
+@each $num, $deg in (1, -50deg), (2, -30deg), (3, 5deg), (4, 35deg) {
+  .ellipse_box--item:nth-child(#{$num}) {
+    transform: translate(-50%, 50%) rotate($deg) translate(300px) rotate(-$deg);
+  }
+}
+
+.request_section {
+  display: flex;
+  justify-content: space-between;
+  &--advantages_container {
+    max-width: 1000px;
+  }
+  &--form_container {
+    max-width: 506px;
+    padding: 0 20px;
+  }
+  &--form {
+    max-width: 408px;
+    padding: 0 49px;
+    background: #131313;
+    box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.05);
+  }
+  &--form_title {
+    display: block;
+    max-width: 297px;
+    font-family: 'Futura';
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.advantages_container {
+  display: inline-block;
+  max-width: 840px;
+  width: 100%;
+  background: url('../assets/images/building_bg.png') no-repeat 0 -60px;
+  &--ellipse_box {
+    margin-left: -150px;
+  }
+  &--item {
+  }
+  &--adv_number {
+    font-family: 'Yeseva One';
+    color: #ffffff;
+    font-size: 18px;
+  }
+  &--adv_text {
+    font-family: 'Futura';
+    font-weight: bolder;
+    font-size: 18px;
+    color: #363636;
+  }
+}
+
+.ellipse_box {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 3px solid $main-color;
+  &--item {
+    left: 50%;
+    bottom: 50%;
+    position: absolute;
+    transform: translate(-50%, 50%);
+  }
+  &--marker {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 100%;
+    background-color: $main-color;
+    text-align: center;
+    vertical-align: middle;
+    border: 10px solid #ffffff;
+  }
+  &--item_text {
+    position: absolute;
+    width: 410px;
+    padding-left: 20px;
+    transform: translate(0, 50%);
+    bottom: 50%;
+    line-height: 21px;
+  }
+}
+
+.input_container {
+  &--title {
+    display: block;
+    font-family: 'Futura';
+    font-size: 15px;
+    line-height: 20px;
+    color: #ffffff80;
+  }
+  &--input {
+    width: 100%;
+    display: block;
+    height: 50px;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff26;
+    &::placeholder {
+      font-family: 'Futura';
+      font-size: 18px;
+      line-height: 25px;
+      color: #ffffff;
+    }
+    &:focus {
+      outline: none;
+      border-color: $main-color;
+    }
+  }
+}
+
+.checkbox_container {
+  &--checkbox {
+    width: 18px;
+    height: 18px;
+    background-color: $main-color;
+    color: #ffffff;
+  }
+  &--checkbox_title {
+    font-family: 'Futura';
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+  }
+}
+
+.bonus_container {
+  max-width: 320px;
+  &--icon_box {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+    background-color: $main-color;
+    line-height: 72px;
+    text-align: center;
+    box-shadow: 0px 10px 20px rgba($main-color, 0.2);
+  }
+  &--icon {
+    vertical-align: middle;
+  }
+  &--offer {
+    display: inline-block;
+    max-width: 230px;
+    vertical-align: middle;
+    font-family: 'Futura';
+    font-size: 20px;
+    line-height: 25px;
+    color: $main-color;
+    text-shadow: 0px 3px 10px rgba($main-color, 0.15);
+  }
+}
+
+.interiors_section {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 6.87%;
+  padding-right: 7%;
+  background: url('../assets/images/interiors_sec_bg.png') no-repeat,
+    linear-gradient(120.96deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background-blend-mode: color;
+  &--container {
+    max-width: 300px;
+    padding-top: 90px;
+  }
+  &--slogan {
+    font-family: 'Yeseva One';
+    font-size: 27px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: $main-color;
+  }
+  &--photos_area {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+    max-width: 800px;
+    max-height: 1200px;
+    width: 100%;
+  }
+  &--photo_wrapper {
+    box-sizing: border-box;
+    padding-bottom: 38px;
+    padding-left: 43px;
+    max-width: 50%;
+    &:first-child {
+      margin-top: 72px;
+    }
+    &:last-child {
+      margin-bottom: 81px;
+    }
+  }
+}
+
+.interiors_section--photo > img {
+  width: 100%;
+}
+
+.interior_list {
+  padding-left: 0;
+  list-style-type: none;
+  font-family: 'Proxima Nova';
+  font-size: 20px;
+  line-height: 34px;
+  color: #ffffff;
+  &--style_box {
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+  }
+  &--style_name {
+    &-active {
+      box-sizing: border-box;
+      color: $main-color;
+      padding-bottom: 2px;
+      border-bottom: 1px solid $main-color;
+    }
+  }
+}
+
+.work_steps_section {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 6.9%;
+  padding-right: 7%;
+  &--note {
+    font-family: 'Futura';
+    font-size: 15px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  &--caption {
+    font-family: 'Yeseva One';
+    font-size: 27px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: $main-color;
+  }
+  &--slider {
+  }
+}
+
+.step_details {
+  &--cur_step_num {
+    font-family: 'Yeseva One';
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  &--step_name {
+    font-family: 'Yeseva One';
+    font-size: 15px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: $main-color;
+  }
+  &--step_description {
+    font-family: 'Futura';
+    font-size: 15px;
+    line-height: 25px;
+    color: #ffffff;
+  }
+}
+
+.design_classes_container {
+  &--card_list {
+    max-width: 1236px;
+    margin: 0 auto;
+  }
+}
+
+.work_steps_section {
+}
+
+.step_list {
+  display: grid;
+  list-style-type: none;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  padding-left: 0;
+  align-items: flex-end;
+  &--item {
+    max-width: 130px;
+    opacity: 0.3;
+    &-active {
+      opacity: 1;
+    }
+  }
+  &--step_num {
+    display: block;
+    font-family: 'Yeseva One';
+    font-size: 15px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-bottom: 1px solid $main-color;
+    padding-bottom: 4px;
+    max-width: 16px;
+  }
+  &--step_name {
+    font-family: 'Futura';
+    font-size: 15px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+}
+
+.team_container {
+  &--card_list {
+    max-width: 1064px;
+    margin: 0 auto;
+  }
+  &--info {
+    max-width: 558px;
+  }
+}
+
+.worker_card {
+  position: relative;
+  max-width: 272px;
+  &--corner_icon_box {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: $main-color;
+    transform: translate(-50%, -50%);
+    line-height: 70px;
+  }
+  &--corner_icon {
+    vertical-align: middle;
+    text-align: center;
+  }
+  &--full_info {
+    max-width: 233px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+  }
+  &--name {
+    font-family: 'Yeseva One';
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #181818;
+  }
+  &--profession {
+    font-family: 'Futura';
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: #959595;
+  }
+  &--add_box {
+    width: 100%;
+    height: 44px;
+    background-color: $main-color;
+  }
+  &--add_text {
+    font-family: 'Yeseva One';
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+
+.clients_container {
+  &--card_list {
+  }
+}
+
+.client_card {
+  max-width: 376px;
+  &--main {
+    background: #ffffff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04);
+  }
+  &--avatar {
+    display: inline-block;
+    width: 76px;
+    height: 76px;
+    border-radius: 100%;
+  }
+  &--name {
+    display: inline-block;
+    font-family: 'Yeseva One';
+    font-size: 18px;
+    line-height: 23px;
+    color: #181818;
+  }
+  &--feedback {
+    font-family: 'Futura';
+    font-size: 15px;
+    line-height: 180%;
+    color: #959595;
+  }
+  &--add_box {
+    transform: translate(0, -50%);
+  }
+}
+
+.add_box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 294px;
+  background: $main-color;
+  box-shadow: 5px 5px 20px rgba($main-color, 0.5);
+  font-size: 0;
+  &--area_sector {
+    flex-grow: 1;
+    max-width: 135px;
+    height: 54px;
+    border-right: 1px solid #ffffff;
+  }
+  &--area {
+    text-align: center;
+    font-family: 'Yeseva One';
+    font-size: 17px;
+    line-height: 54px;
+    text-transform: uppercase;
+    color: #ffffff;
+    &::before {
+      content: url('../assets/icons/graph.svg');
+      display: inline-block;
+      width: 32px;
+      height: 31px;
+      vertical-align: middle;
+    }
+  }
+  &--date_sector {
+    flex-grow: 1;
+    max-width: 159px;
+    height: 54px;
+  }
+  &--date {
+    font-family: 'Yeseva One';
+    font-size: 17px;
+    line-height: 54px;
+    text-transform: uppercase;
+    color: #ffffff;
+    &::before {
+      content: url('../assets/icons/tablet.svg');
+      display: inline-block;
+      width: 33px;
+      height: 32px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.footer {
+  background-color: #131313;
 }
