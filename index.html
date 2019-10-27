@@ -149,9 +149,20 @@
               alt="camcorder_icon"
               class="main_container--icon"
             />
-            <div class="broadcast_container--video_box">
-              <img src="./assets/images/poster.png" alt="video" class="video" />
-              <a class="video--play_button"></a>
+            <div class="video_box broadcast_container--video_box">
+              <iframe
+                class="video_box--video"
+                src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+              <img
+                src="./assets/images/poster.png"
+                alt="poster"
+                class="video_box--poster"
+              />
+              <a class="video_box--play_button"></a>
             </div>
 
             <p class="broadcast_container--info main_container--info">
@@ -168,27 +179,27 @@
       <div class="wrap-color-white">
         <div class="wrap--content">
           <div class="broadcast_container--form_container">
-            <form
-              action="get link to broadcast"
-              method="GET"
-              class="broadcast_container--form"
-            >
+            <form action="#" method="GET" class="broadcast_container--form">
               <div class="input_container broadcast_container--input_container">
                 <label for="name1" class="input_container--title">Name</label>
                 <input
+                  class="input_container--input"
                   type="text"
                   id="name1"
                   placeholder="What is your name"
-                  class="input_container--input"
+                  pattern='\w+'
+                  required
                 />
               </div>
               <div class="input_container broadcast_container--input_container">
-                <label for="phone1" class="input_container--title">Phone</label>
+                <label for="phone" class="input_container--title">Phone</label>
                 <input
-                  type="text"
-                  id="phone1"
-                  placeholder="Your phone number:"
                   class="input_container--input"
+                  type="tel"
+                  id="phone"
+                  placeholder="Your phone number:"
+                  pattern=''
+                  required
                 />
               </div>
               <button
@@ -205,6 +216,7 @@
                   type="checkbox"
                   name="agreement"
                   id="agree1"
+                  required
                   checked
                 /><label class="checkbox_container--checkbox_title" for="agree1"
                   >I agree to the processing of personal data</label
@@ -374,23 +386,27 @@
                 <div class="input_container request_section--input_container">
                   <label class="input_container--title" for="name">Name</label>
                   <input
+                    class="input_container--input"
                     type="text"
                     name="name"
                     id="name"
+                    pattern='\w+'
                     placeholder="What is your name:"
-                    class="input_container--input"
+                    required
                   />
                 </div>
                 <div class="input_container request_section--input_container">
-                  <label class="input_container--title" for="phone"
+                  <label class="input_container--title" for="phone1"
                     >Phone</label
                   >
                   <input
                     class="input_container--input"
-                    type="text"
+                    type="tel"
                     name="phone number"
-                    id="phone"
+                    id="phone1"
+                    pattern=''
                     placeholder="Your phone number:"
+                    required
                   />
                 </div>
                 <div class="input_container request_section--input_container">
@@ -402,7 +418,9 @@
                     type="email"
                     name="email"
                     id="email"
+                    pattern=''
                     placeholder="Your email"
+                    required
                   />
                 </div>
                 <div
@@ -413,6 +431,7 @@
                     type="checkbox"
                     name="agreement"
                     id="agree"
+                    required
                     checked
                   /><label
                     class="checkbox_container--checkbox_title"
@@ -912,29 +931,33 @@
                   Have any questions?
                 </legend>
                 <div class="input_container contacts_section--input_container">
-                  <label class="input_container--title" for="name">Name</label>
+                  <label class="input_container--title" for="name2">Name</label>
                   <input
+                    class="input_container--input"
                     type="text"
                     name="name"
-                    id="name"
+                    id="name2"
+                    pattern='\w+'
                     placeholder="What is your name:"
-                    class="input_container--input"
+                    required
                   />
                 </div>
                 <div class="input_container contacts_section--input_container">
-                  <label class="input_container--title" for="phone"
+                  <label class="input_container--title" for="phone2"
                     >Phone</label
                   >
                   <input
                     class="input_container--input"
-                    type="text"
+                    type="tel"
                     name="phone number"
-                    id="phone"
+                    id="phone2"
+                    pattern=''
                     placeholder="Your phone number:"
+                    required
                   />
                 </div>
                 <div class="input_container contacts_section--input_container">
-                  <label class="input_container--title" for="email"
+                  <label class="input_container--title" for="question"
                     >Question</label
                   >
                   <input
@@ -942,7 +965,9 @@
                     type="text"
                     name="question"
                     id="question"
+                    pattern=''
                     placeholder="I want to know"
+                    required
                   />
                 </div>
                 <div
@@ -952,11 +977,12 @@
                     class="checkbox_container--checkbox"
                     type="checkbox"
                     name="agreement"
-                    id="agree"
+                    id="agree2"
+                    required
                     checked
                   /><label
                     class="checkbox_container--checkbox_title"
-                    for="agree"
+                    for="agree2"
                     >I agree to the processing of personal data</label
                   >
                 </div>
