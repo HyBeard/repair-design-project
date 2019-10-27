@@ -7,35 +7,29 @@
     <title>repair-design-project</title>
   </head>
   <body class="body">
-    <header class="header">
-      <div class="wrap">
-        <div class="wrap--content">
-          <div class="header_inner--wrapper">
-            <span class="header_inner--logo logo"
-              >IC "Repair Design Project"</span
-            >
-            <div class="header_inner--nav_box">
-              <nav class="main_nav">
-                <a href="#" class="main_nav--link main_nav--link-active"
-                  >HOME</a
-                >
-                <a href="#" class="main_nav--link">PROJECTS</a>
-                <a href="#" class="main_nav--link">MEASUREMENT</a>
-                <a href="#" class="main_nav--link">TEAM</a>
-                <a href="#" class="main_nav--link">REVIEWS</a>
-                <a href="#" class="main_nav--link">CONTACTS</a>
-              </nav>
-            </div>
-            <a class="header_inner--contact_number" href="tel:+79287683239"
-              >+7 (928) 768-32-39</a
-            >
-            <button class="header_inner--call_button button button-size-s">
-              Request a call
-            </button>
+    <div class="wrap">
+      <div class="wrap--content">
+        <header class="header">
+          <span class="header--logo logo">IC "Repair Design Project"</span>
+          <div class="header--nav_box">
+            <nav class="navbar">
+              <a href="#" class="navbar--link navbar--link-active">HOME</a>
+              <a href="#" class="navbar--link">PROJECTS</a>
+              <a href="#" class="navbar--link">MEASUREMENT</a>
+              <a href="#" class="navbar--link">TEAM</a>
+              <a href="#" class="navbar--link">REVIEWS</a>
+              <a href="#" class="navbar--link">CONTACTS</a>
+            </nav>
           </div>
-        </div>
+          <a class="header--contact_number" href="tel:+79287683239"
+            >+7 (928) 768-32-39</a
+          >
+          <button class="header--call_button button button-size-s">
+            Request a call
+          </button>
+        </header>
       </div>
-    </header>
+    </div>
     <main class="main">
       <div class="wrap">
         <div class="wrap--content">
@@ -53,9 +47,10 @@
                   >
                 </h2>
                 <p class="special_offer--details">
-                  Get ready-made turnkey repairs on time with work time saving
-                  up to 45 days and 20% from cost of materials due to the
-                  organization of work
+                  Get ready-made turnkey repairs on time
+                  <br />
+                  with work time saving up to 45 days and 20% from cost of
+                  materials due to the organization of work
                 </p>
                 <button class="special_offer--cost_button button">
                   CALCULATE THE COST
@@ -101,14 +96,15 @@
                 >
               </li>
               <li class="project_params--parameter">
+                apartment area:
+                <span class="project_params--parameter_details">81 m2</span>
+              </li>
+
+              <li class="project_params--parameter">
                 Repair time:
                 <span class="project_params--parameter_details"
                   >3.5 months</span
                 >
-              </li>
-              <li class="project_params--parameter">
-                apartment area:
-                <span class="project_params--parameter_details">81 m2</span>
               </li>
               <li class="project_params--parameter">
                 Repair Cost:
@@ -138,14 +134,12 @@
                   src="./assets/images/project2.png"
                   alt="project_example_2"
                 />
+                <div
+                  class="slide_button carousel_container--slide_button"
+                ></div>
               </div>
             </div>
           </section>
-        </div>
-      </div>
-
-      <div class="wrap-color-white">
-        <div class="wrap--content">
           <div class="broadcast_container main_container">
             <h3 class="main_container--title main_container--title-on_dark_bg">
               online control
@@ -156,7 +150,7 @@
               class="main_container--icon"
             />
             <div class="broadcast_container--video_box">
-              <div class="video" src="#"></div>
+              <img src="./assets/images/poster.png" alt="video" class="video" />
               <a class="video--play_button"></a>
             </div>
 
@@ -168,19 +162,34 @@
               request below and you will receive a link to the broadcast.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div class="wrap-color-white">
+        <div class="wrap--content">
           <div class="broadcast_container--form_container">
             <form
               action="get link to broadcast"
               method="GET"
               class="broadcast_container--form"
             >
-              <div class="input_container">
-                <label for="name" class="input_container--input_title"></label>
-                <input type="text" class="input_container--input" />
+              <div class="input_container broadcast_container--input_container">
+                <label for="name1" class="input_container--title">Name</label>
+                <input
+                  type="text"
+                  id="name1"
+                  placeholder="What is your name"
+                  class="input_container--input"
+                />
               </div>
-              <div class="input_container">
-                <label for="name" class="input_container--input_title"></label>
-                <input type="text" class="input_container--input" />
+              <div class="input_container broadcast_container--input_container">
+                <label for="phone1" class="input_container--title">Phone</label>
+                <input
+                  type="text"
+                  id="phone1"
+                  placeholder="Your phone number:"
+                  class="input_container--input"
+                />
               </div>
               <button
                 class="button broadcast_container--submit_button"
@@ -188,13 +197,16 @@
               >
                 submit
               </button>
-              <div class="checkbox_container">
+              <div
+                class="checkbox_container broadcast_container--checkbox_container"
+              >
                 <input
                   class="checkbox_container--checkbox"
                   type="checkbox"
                   name="agreement"
-                  id="agree"
-                /><label class="checkbox_container--checkbox_title" for="agree"
+                  id="agree1"
+                  checked
+                /><label class="checkbox_container--checkbox_title" for="agree1"
                   >I agree to the processing of personal data</label
                 >
               </div>
@@ -202,13 +214,13 @@
           </div>
 
           <div class="repair_types_container main_container">
-            <h3 class="main_container--title main_container--title-on_dark_bg">
+            <h3 class="main_container--title">
               TYPES OF REPAIR
             </h3>
             <img
               src="./assets/icons/tools.svg"
               alt="repair_types_container_icon"
-              class="repair_types_container--icon main_container--icon"
+              class="main_container--icon"
             />
             <ul class="card_list repair_types_container--card_list">
               <li class="card card_list--item">
@@ -359,7 +371,7 @@
                 <legend class="request_section--form_title">
                   Leave a request for free departure of the measurer
                 </legend>
-                <div class="input_container">
+                <div class="input_container request_section--input_container">
                   <label class="input_container--title" for="name">Name</label>
                   <input
                     type="text"
@@ -369,9 +381,9 @@
                     class="input_container--input"
                   />
                 </div>
-                <div class="input_container">
+                <div class="input_container request_section--input_container">
                   <label class="input_container--title" for="phone"
-                    >What is your name:</label
+                    >Phone</label
                   >
                   <input
                     class="input_container--input"
@@ -381,7 +393,7 @@
                     placeholder="Your phone number:"
                   />
                 </div>
-                <div class="input_container">
+                <div class="input_container request_section--input_container">
                   <label class="input_container--title" for="email"
                     >Email</label
                   >
@@ -393,12 +405,15 @@
                     placeholder="Your email"
                   />
                 </div>
-                <div class="checkbox_container">
+                <div
+                  class="checkbox_container request_section--checkbox_container"
+                >
                   <input
                     class="checkbox_container--checkbox"
                     type="checkbox"
                     name="agreement"
                     id="agree"
+                    checked
                   /><label
                     class="checkbox_container--checkbox_title"
                     for="agree"
@@ -412,7 +427,7 @@
                   Call the measurer
                 </button>
               </form>
-              <div class="bonus_container">
+              <div class="bonus_container request_section--bonus_container">
                 <div class="bonus_container--icon_box">
                   <img
                     class="bonus_container--icon"
@@ -510,9 +525,9 @@
             <img
               src="./assets/icons/design.svg"
               alt="design_classes_container_icon"
-              class="design_classes_container--icon main_container--icon"
+              class="main_container--icon"
             />
-            <p class="main_container--info">
+            <p class="main_container--info design_classes_container--info">
               Design project not only helps to make the repair of your apartment
               more modern, but also significantly reduces the cost of materials
               and reduces the time of repair work.
@@ -604,7 +619,7 @@
       <div class="wrap">
         <div class="wrap--content">
           <section class="work_steps_section section">
-            <div class="section--column_left">
+            <div class="work_steps_section--column_left">
               <span class="work_steps_section--note">How we are working</span>
               <h3 class="work_steps_section--caption section--caption">
                 6 steps to the goal
@@ -618,14 +633,19 @@
                   After your call, we go to you to consult and measure the
                   premises of your apartment. During our meeting, you can ask
                   absolutely any number of questions. An appraiser-appraiser
-                  leaves to measure the room. He will advise you on the issues
-                  of repair technology, apartment design, terms of repair of the
-                  apartment as a whole and its individual stages.
+                  leaves to measure the room.
+                </p>
+                <p class="step_details--step_description">
+                  He will advise you on the issues of repair technology,
+                  apartment design, terms of repair of the apartment as a whole
+                  and its individual stages.
                 </p>
               </div>
-              <div class="work_steps_section--slider arrow_slider">
-                <ul class="arrow_slider--pagination">
-                  <li class="arrow_slider--breakpoint"></li>
+              <div class="work_steps_section--slider ">
+                <ul class="arrow_slider">
+                  <li
+                    class="arrow_slider--breakpoint arrow_slider--breakpoint-active"
+                  ></li>
                   <li class="arrow_slider--breakpoint"></li>
                   <li class="arrow_slider--breakpoint"></li>
                   <li class="arrow_slider--breakpoint"></li>
@@ -634,7 +654,7 @@
                 </ul>
               </div>
             </div>
-            <div class="section--column_right">
+            <div class="work_steps_section--column_right">
               <ul class="step_list work_steps_section--step_list">
                 <li class="step_list--item step_list--item-active">
                   <span class="step_list--step_num">01</span>
@@ -683,14 +703,16 @@
             <img
               src="./assets/icons/team.svg"
               alt="team_icon"
-              class="main_container--icon team_container--icon"
+              class="main_container--icon"
             />
-            <p class="main_container--info main_container--info-on_dark_bg">
+            <p
+              class="main_container--info main_container--info-on_dark_bg team_container--details"
+            >
               Our team has helped to become happier for more than 500 families
               and we are not going to stop
             </p>
             <ul class="card_list team_container--card_list">
-              <li class="worker_card">
+              <li class="worker_card card_list--item">
                 <div class="worker_card--corner_icon_box">
                   <img
                     src="./assets/icons/idea.svg"
@@ -715,7 +737,7 @@
                   </div>
                 </div>
               </li>
-              <li class="worker_card">
+              <li class="worker_card card_list--item">
                 <div class="worker_card--corner_icon_box">
                   <img
                     src="./assets/icons/pen.svg"
@@ -740,7 +762,7 @@
                   </div>
                 </div>
               </li>
-              <li class="worker_card">
+              <li class="worker_card card_list--item">
                 <div class="worker_card--corner_icon_box">
                   <img
                     src="./assets/icons/portfolio.svg"
@@ -782,7 +804,7 @@
             <img
               src="./assets/icons/clients.svg"
               alt="clients_container_icon"
-              class="main_container--icon clients_container--icon"
+              class="main_container--icon"
             />
             <p class="main_container--info clients_container--info">
               80% of our customers recommend us to their friends and family.
@@ -799,22 +821,22 @@
                     Fedosova Maria Konstantinovna
                   </h5>
                   <p class="client_card--feedback">
-                    I want to thank the guys for their work. WE PUT YOUR SHOWER
-                    PART IN REPAIR. I am VERY grateful that I referred to the
-                    repair as to my own. GREAT THANKS I EXPRESS THE PROJECT TO
-                    GEORGIA FOR ITS PROFESSIONALISM AND APPROACH. THE REPAIR
-                    PROCESS WAS TURNED OUT IN TERMS, FASTER THAN ANTICIPATED.
-                    TEAM MOBILE AND PROFESSIONAL. WORKS PERFORMED QUALITATIVELY
-                    WITHOUT COMMENTS. QUALITY SATISFIED. PRICES DEMOCRATIC. I
-                    RECOMMEND THESE MASTERS.
+                    I want to thank the guys for their work. We put your shower
+                    part in repair. I am very grateful that i referred to the
+                    repair as to my own. Great thanks i express the project to
+                    georgia for its professionalism and approach. The repair
+                    process was turned out in terms, faster than anticipated.
+                    Team mobile and professional. Works performed qualitatively
+                    without comments. Quality satisfied. Prices democratic. I
+                    recommend these masters.
                   </p>
                 </div>
                 <div class="add_box client_card--add_box">
-                  <div class="add_box--area_sector">
-                    <span class="add_box--area">40 M2</span>
+                  <div class="add_box--sector">
+                    <span class="add_box--text">40 M2</span>
                   </div>
-                  <div class="add_box--date_sector">
-                    <span class="add_box--date">48 DAYS</span>
+                  <div class="add_box--sector">
+                    <span class="add_box--text">48 DAYS</span>
                   </div>
                 </div>
               </li>
@@ -830,22 +852,22 @@
                     Afanasyev Sergey Alexandrovich
                   </h5>
                   <p class="client_card--feedback">
-                    I want to thank the guys for their work. WE PUT YOUR SHOWER
-                    PART IN REPAIR. I am VERY grateful that I referred to the
-                    repair as to my own. GREAT THANKS I EXPRESS THE PROJECT TO
-                    GEORGIA FOR ITS PROFESSIONALISM AND APPROACH. THE REPAIR
-                    PROCESS WAS TURNED OUT IN TERMS, FASTER THAN ANTICIPATED.
-                    TEAM MOBILE AND PROFESSIONAL. WORKS PERFORMED QUALITATIVELY
-                    WITHOUT COMMENTS. QUALITY SATISFIED. PRICES DEMOCRATIC. I
-                    RECOMMEND THESE MASTERS.
+                    I want to thank the guys for their work. We put your shower
+                    part in repair. I am very grateful that i referred to the
+                    repair as to my own. Great thanks i express the project to
+                    georgia for its professionalism and approach. The repair
+                    process was turned out in terms, faster than anticipated.
+                    Team mobile and professional. Works performed qualitatively
+                    without comments. Quality satisfied. prices democratic. I
+                    recommend these masters.
                   </p>
                 </div>
                 <div class="add_box client_card--add_box">
-                  <div class="add_box--area_sector">
-                    <span class="add_box--area">90 M2</span>
+                  <div class="add_box--sector">
+                    <span class="add_box--text">90 M2</span>
                   </div>
-                  <div class="add_box--date_sector">
-                    <span class="add_box--date">128 DAYS</span>
+                  <div class="add_box--sector">
+                    <span class="add_box--text">128 DAYS</span>
                   </div>
                 </div>
               </li>
@@ -858,22 +880,22 @@
                   />
                   <h5 class="client_card--name">Kiriev Egor Leonidovich</h5>
                   <p class="client_card--feedback">
-                    I want to thank the guys for their work. WE PUT YOUR SHOWER
-                    PART IN REPAIR. I am VERY grateful that I referred to the
-                    repair as to my own. GREAT THANKS I EXPRESS THE PROJECT TO
-                    GEORGIA FOR ITS PROFESSIONALISM AND APPROACH. THE REPAIR
-                    PROCESS WAS TURNED OUT IN TERMS, FASTER THAN ANTICIPATED.
-                    TEAM MOBILE AND PROFESSIONAL. WORKS PERFORMED QUALITATIVELY
-                    WITHOUT COMMENTS. QUALITY SATISFIED. PRICES DEMOCRATIC. I
-                    RECOMMEND THESE MASTERS.
+                    I want to thank the guys for their work. We put your shower
+                    part in repair. I am very grateful that i referred to the
+                    repair as to my own. Great thanks i express the project to
+                    georgia for its professionalism and approach. The repair
+                    process was turned out in terms, faster than anticipated.
+                    Team mobile and professional. Works performed qualitatively
+                    without comments. Quality satisfied. Prices democratic. I
+                    recommend these masters.
                   </p>
                 </div>
                 <div class="add_box client_card--add_box">
-                  <div class="add_box--area_sector">
-                    <span class="add_box--area">56 M2</span>
+                  <div class="add_box--sector">
+                    <span class="add_box--text">56 M2</span>
                   </div>
-                  <div class="add_box--date_sector">
-                    <span class="add_box--date">86 DAYS</span>
+                  <div class="add_box--sector">
+                    <span class="add_box--text">86 DAYS</span>
                   </div>
                 </div>
               </li>
@@ -887,9 +909,9 @@
             <div class="contacts_section--form_container">
               <form class="contacts_section--form" action="#" method="GET">
                 <legend class="contacts_section--form_title">
-                  Leave a request for free departure of the measurer
+                  Have any questions?
                 </legend>
-                <div class="input_container">
+                <div class="input_container contacts_section--input_container">
                   <label class="input_container--title" for="name">Name</label>
                   <input
                     type="text"
@@ -899,7 +921,7 @@
                     class="input_container--input"
                   />
                 </div>
-                <div class="input_container">
+                <div class="input_container contacts_section--input_container">
                   <label class="input_container--title" for="phone"
                     >Phone</label
                   >
@@ -911,7 +933,7 @@
                     placeholder="Your phone number:"
                   />
                 </div>
-                <div class="input_container">
+                <div class="input_container contacts_section--input_container">
                   <label class="input_container--title" for="email"
                     >Question</label
                   >
@@ -920,15 +942,18 @@
                     type="text"
                     name="question"
                     id="question"
-                    placeholder="I want tot know"
+                    placeholder="I want to know"
                   />
                 </div>
-                <div class="checkbox_container">
+                <div
+                  class="checkbox_container contacts_section--checkbox_container"
+                >
                   <input
                     class="checkbox_container--checkbox"
                     type="checkbox"
                     name="agreement"
                     id="agree"
+                    checked
                   /><label
                     class="checkbox_container--checkbox_title"
                     for="agree"
@@ -936,21 +961,31 @@
                   >
                 </div>
                 <button
-                  class="button request_section--submit_button"
+                  class="button contacts_section--submit_button"
                   type="submit"
                 >
                   submit
                 </button>
               </form>
             </div>
-            <span class="contacts_section--info"></span>
-            <span class="contacts_section--info"></span>
+            <span class="contacts_section--info"
+              >Rostov-on-Don, Nansen St., 239 Shopping Center
+            </span>
+            <span class="contacts_section--info"
+              >Decorum Tel +7 (928) 768 32 29</span
+            >
             <div class="socials contacts_section--socials">
               <a href="#" class="socials--item_link"
-                ><img src="./assets/icons/mail.svg" alt="mail icon"
+                ><img
+                  src="./assets/icons/mail.svg"
+                  alt="mail icon"
+                  class="socials--icon"
               /></a>
               <a href="#" class="socials--item_link"
-                ><img src="./assets/icons/instagram.svg" alt="instagram icon"
+                ><img
+                  src="./assets/icons/instagram.svg"
+                  alt="instagram icon"
+                  class="socials--icon"
               /></a>
             </div>
             <div class="location_box contacts_section--location_box">
@@ -964,34 +999,28 @@
         </div>
       </div>
     </main>
-    <footer class="footer">
-      <div class="wrap">
-        <div class="wrap--content">
-          <div class="header_inner--wrapper">
-            <span class="header_inner--logo logo"
-              >IC "Repair Design Project"</span
-            >
-            <div class="header_inner--nav_box">
-              <nav class="main_nav">
-                <a href="#" class="main_nav--link main_nav--link-active"
-                  >HOME</a
-                >
-                <a href="#" class="main_nav--link">PROJECTS</a>
-                <a href="#" class="main_nav--link">MEASUREMENT</a>
-                <a href="#" class="main_nav--link">TEAM</a>
-                <a href="#" class="main_nav--link">REVIEWS</a>
-                <a href="#" class="main_nav--link">CONTACTS</a>
-              </nav>
-            </div>
-            <a class="header_inner--contact_number" href="tel:+79287683239"
-              >+7 (928) 768-32-39</a
-            >
-            <button class="header_inner--call_button button button-size-s">
-              Request a call
-            </button>
+    <div class="wrap">
+      <div class="wrap--content">
+        <footer class="footer">
+          <span class="header--logo logo">IC "Repair Design Project"</span>
+          <div class="header--nav_box">
+            <nav class="navbar">
+              <a href="#" class="navbar--link navbar--link-active">HOME</a>
+              <a href="#" class="navbar--link">PROJECTS</a>
+              <a href="#" class="navbar--link">MEASUREMENT</a>
+              <a href="#" class="navbar--link">TEAM</a>
+              <a href="#" class="navbar--link">REVIEWS</a>
+              <a href="#" class="navbar--link">CONTACTS</a>
+            </nav>
           </div>
-        </div>
+          <a class="header--contact_number" href="tel:+79287683239"
+            >+7 (928) 768-32-39</a
+          >
+          <button class="header--call_button button button-size-s">
+            Request a call
+          </button>
+        </footer>
       </div>
-    </footer>
+    </div>
   </body>
 </html>

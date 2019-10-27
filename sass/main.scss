@@ -2,94 +2,110 @@
 
 @font-face {
   font-family: 'Futura';
-  src: url('../assets/fonts/Futura\ Book\ font.ttf') format('truetype'),
-    url('../assets/fonts/futura\ medium\ bt.ttf') format('truetype');
+  src: url('../assets/fonts/Futura\ Book\ font.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../assets/fonts/futura\ medium\ bt.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Yeseva One';
   src: url('../assets/fonts/YesevaOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'Proxima Nova';
   src: url('../assets/fonts/ProximaNova-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-$main-color: #e3b873;
-
-.page_wrap {
-  max-width: 1440px;
-  margin: 0 auto;
-  &-bg-light {
-    background-color: #ffffff;
-  }
-  &-bg-dark {
-    background-color: #131313;
-  }
-}
+$main-color: rgb(227, 184, 114);
+$white: #ffffff;
+$color13: #131313;
+$color36: #363636;
+$color18: #181818;
+$color95: #959595;
+// $main-color: rgb(59, 59, 255);
+// $white: rgb(255, 185, 185);
+// $color13: rgb(42, 71, 71);
+// $color36: #ff0000;
+// $color18: #8968ff;
+// $color95: #22f0ff;
 
 .wrap {
-  background-color: #131313;
+  background-color: $color13;
   &-color-white {
-    background-color: #ffffff;
+    background-color: $white;
   }
   &--content {
     max-width: 1440px;
     margin: 0 auto;
+    padding: 0 1.5%;
   }
 }
 
 .header {
-  &_inner {
-    &--wrapper {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      max-width: 1276px;
-      margin: 0 auto;
-    }
-    &--nav_box {
-      flex-grow: 1;
-      padding-right: 40px;
-      padding-left: 40px;
-      text-align: center;
-    }
-    &--contact_number {
-      white-space: nowrap;
-      font-family: 'Futura';
-      font-size: 14px;
-      color: $main-color;
-      text-decoration: underline;
-    }
-    &--call_button {
-      margin-right: 20px;
-      margin-left: 3.125%;
-      margin-top: 24px;
-      margin-bottom: 22px;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 24px 5.7% 22px;
+  &--logo {
+    padding-right: 18px;
+    font-weight: 500;
+  }
+  &--nav_box {
+    flex: 1 1 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  &--contact_number {
+    border-bottom: 1px solid $main-color;
+    white-space: nowrap;
+    font-family: 'Futura';
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: $main-color;
+    word-spacing: -1px;
+    text-decoration: none;
+  }
+  &--call_button {
+    margin-left: 3.3%;
+    margin-right: 1.45%;
   }
 }
 
 .logo {
   font-family: 'Futura';
   font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
   text-transform: uppercase;
   color: $main-color;
   white-space: nowrap;
 }
 
-.main_nav {
+.navbar {
   display: flex;
-  max-width: 582px;
+  max-width: 602px;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 40px;
   &--link {
     padding: 0 10px;
     font-family: 'Futura';
     font-size: 14px;
     text-decoration: none;
-    color: #ffffff;
+    color: $white;
     &-active {
       color: $main-color;
     }
@@ -102,45 +118,57 @@ $main-color: #e3b873;
 
 .button {
   box-sizing: border-box;
-  width: 207px;
+  max-width: 207px;
+  width: 100%;
   height: 51px;
-  padding: 0 10px;
   outline: none;
   white-space: nowrap;
   background-color: $main-color;
-  color: #ffffff;
+  color: $white;
   font-family: 'Futura';
   font-size: 13px;
   line-height: 15px;
+  font-weight: 500;
   text-transform: uppercase;
-  box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+  box-shadow: 0px 5px 15px rgba($main-color, 0.2);
   border-radius: 2px;
   border: none;
   &-size-s {
     width: 161px;
     height: 37px;
-    padding: 0 10px;
     font-size: 13px;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+    box-shadow: 0px 5px 15px rgba($main-color, 0.2);
   }
 }
 
 .promo_section {
+  display: flex;
   position: relative;
-  font-size: 0;
-  margin-bottom: 107px;
+  margin-bottom: 6.25%;
   &--socials_box {
-    display: inline-block;
     width: 5.7%;
-    transform: rotate(90deg);
-    &::after {
-    }
+    margin-bottom: 95px;
+    align-self: center;
+    white-space: nowrap;
+    text-align: center;
   }
   &--social_link {
+    display: inline-block;
+    font-family: 'Futura';
     font-size: 14px;
     line-height: 16px;
+    font-weight: 500;
     color: $main-color;
     text-decoration: none;
+    writing-mode: vertical-rl;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 51px;
+      margin-top: 10px;
+      background-color: $main-color;
+    }
   }
   &--inner_bg {
     box-sizing: border-box;
@@ -158,32 +186,44 @@ $main-color: #e3b873;
     left: 0;
     transform: translate(0, 50%);
   }
+  &--special_offer {
+    margin-bottom: 17px;
+  }
 }
 
 .scroll_button {
-  background: #131313;
+  background: $color13;
   width: 247px;
   height: 97px;
-  text-align: center;
   &--text {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
-    line-height: 97px;
-    vertical-align: middle;
-    color: #ffffff;
-    text-decoration: none;
     font-family: 'Yeseva One';
     font-size: 14px;
+    color: $white;
     text-transform: uppercase;
+    text-decoration: none;
     &::after {
+      content: url('../assets/icons/tick.svg');
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      margin-left: 18px;
+      border-radius: 100%;
+      border: 2px solid $main-color;
+      line-height: 26px;
+      vertical-align: middle;
+      text-align: center;
     }
   }
 }
 
 .special_offer {
   max-width: 515px;
-  margin-top: 14px;
+  font-size: 0;
   &--caption {
     margin: 0 0 13px 0;
     font-family: 'Yeseva One';
@@ -191,25 +231,26 @@ $main-color: #e3b873;
     font-size: 40px;
     line-height: 53px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $white;
     &-colored {
       color: $main-color;
     }
   }
   &--details {
     margin: 0 0 47px 0;
-    max-width: 435px;
+    max-width: 446px;
     font-family: 'Futura';
     font-size: 22px;
     line-height: 30px;
-    color: #ffffff;
+    letter-spacing: -1px;
+    color: $white;
   }
   &--cost_button {
-    margin-right: 20px;
+    margin-right: 21px;
   }
   &--submit_button {
     background-color: transparent;
-    border: 1px solid #ffffff;
+    border: 1px solid $white;
   }
 }
 
@@ -220,7 +261,8 @@ $main-color: #e3b873;
     'info carousel'
     'params carousel'
     'slider carousel';
-  padding-left: 7.02%;
+  padding-left: 7%;
+  padding-bottom: 10px;
   &--project_names {
     grid-area: names;
   }
@@ -228,7 +270,9 @@ $main-color: #e3b873;
     grid-area: info;
   }
   &--caption {
+    position: relative;
     max-width: 155px;
+    margin-top: 26px;
     font-family: 'Yeseva One';
     font-size: 27px;
     line-height: 37px;
@@ -236,35 +280,53 @@ $main-color: #e3b873;
     text-transform: uppercase;
     color: $main-color;
     &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 53px;
+      left: 163px;
+      width: 92px;
+      height: 1px;
+      background-color: $main-color;
     }
   }
   &--note {
-    max-width: 442px;
+    max-width: 420px;
     font-family: 'Futura';
     font-size: 18px;
     line-height: 29px;
-    color: #ffffff;
+    letter-spacing: -1px;
+    color: $white;
   }
   &--params_list {
     grid-area: params;
   }
   &--slider {
     grid-area: slider;
+    margin-top: 6px;
   }
   &--carousel {
+    padding-top: 28px;
     grid-area: carousel;
+    justify-self: end;
+    max-width: 865px;
+    font-size: 0;
   }
 }
 
 .project_list {
-  list-style-type: none;
   display: flex;
-  justify-content: space-around;
-  max-width: 623px;
+  justify-content: space-between;
+  max-width: 643px;
+  padding-left: 40px;
+  list-style-type: none;
   &--item {
     padding: 0 10px;
   }
   &--link {
+    display: inline-block;
+    box-sizing: border-box;
+    padding-bottom: 6px;
     text-decoration: none;
     font-family: 'Yeseva One';
     font-size: 14px;
@@ -274,7 +336,6 @@ $main-color: #e3b873;
     &-active {
       color: $main-color;
       border-bottom: 1px solid $main-color;
-      padding-bottom: 3px;
     }
   }
 }
@@ -282,9 +343,12 @@ $main-color: #e3b873;
 .project_params {
   display: grid;
   grid-template: auto auto/1fr 1fr;
+  max-width: 382px;
   padding-left: 0;
+  margin-top: 1.75em;
   list-style-type: none;
   &--parameter {
+    min-height: 110px;
     font-family: 'Yeseva One';
     font-size: 18px;
     line-height: 25px;
@@ -293,72 +357,102 @@ $main-color: #e3b873;
   }
   &--parameter_details {
     display: block;
+    max-width: 100px;
+    margin-top: 0.1em;
     font-family: 'Futura';
     font-size: 15px;
     line-height: 20px;
-    color: #ffffff;
+    color: $white;
     text-transform: none;
+    letter-spacing: -1px;
   }
 }
 
 .arrow_slider {
+  padding-left: 0;
   list-style-type: none;
   &--breakpoint {
     display: inline-block;
     width: 10px;
     height: 10px;
-    margin: 0 9px;
+    margin: 0 7px;
     border-radius: 10px;
     font-size: 0;
-    background-color: #ffffff;
+    background-color: $white;
     opacity: 0.3;
     &-active {
       opacity: 1;
     }
   }
   &::after {
-    content: url('../assets/icons/arrow.png');
+    content: url('../assets/icons/arrow.svg');
     display: inline-block;
     width: 42px;
     height: 13px;
     transform: rotate(180deg);
+    margin-left: 18px;
   }
   &::before {
     content: url('../assets/icons/arrow.png');
     display: inline-block;
     width: 42px;
     height: 13px;
+    margin-right: 18px;
   }
 }
 
 .carousel_container {
+  position: relative;
   max-height: 482px;
   overflow: hidden;
   white-space: nowrap;
   &--img_block {
     display: inline-block;
     max-width: 679px;
-    padding-left: 20px;
+    margin-left: 20px;
+    overflow: hidden;
     font-size: 0;
     box-shadow: 0px 50px 30px rgba(0, 0, 0, 0.15);
+    &:nth-child(2) {
+      .carousel_container--img {
+        position: relative;
+        left: -135px;
+      }
+    }
   }
   &--img {
     width: 100%;
     height: 100%;
   }
+  .slide_button {
+    position: absolute;
+    top: 46%;
+    right: 5.3%;
+  }
+}
+
+.slide_button {
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  background: url('../assets/icons/tick.svg') center no-repeat $main-color;
+  background-size: 40%;
+  box-shadow: 0px 0px 15px rgba($main-color, 0.5);
+  background-blend-mode: color-dodge;
+  transform: rotate(-90deg);
 }
 
 .main_container {
   text-align: center;
   &--title {
-    padding-bottom: 13px;
+    margin-bottom: 12px;
     font-family: 'Yeseva One';
     font-size: 20px;
     line-height: 28px;
     text-transform: uppercase;
-    color: #181818;
+    color: $color18;
     &-on_dark_bg {
-      color: #ffffff;
+      color: $white;
     }
   }
   &--icon {
@@ -370,28 +464,131 @@ $main-color: #e3b873;
     font-family: 'Futura';
     font-size: 20px;
     line-height: 34px;
-    color: #363636;
+    letter-spacing: -1px;
+    color: $color36;
     &-on_dark_bg {
-      color: #ffffff;
+      color: $white;
     }
   }
 }
 
-.broadcast_container {
-  &--video_box {
-    display: inline-block;
-    width: 817px;
-    height: 434px;
-    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
-    background: url('../assets/images/poster.png') rgba(0, 0, 0, 0.8);
-    background-blend-mode: color;
-    margin: 0 auto;
-    font-size: 0;
-    &::after {
+.input_container {
+  &--title {
+    display: block;
+    font-family: 'Futura';
+    font-size: 15px;
+    line-height: 20px;
+    color: $white;
+    opacity: 0.5;
+  }
+  &--input {
+    width: 100%;
+    display: block;
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid rgba($white, 0.5);
+    background-color: transparent;
+    font-family: 'Futura';
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    &::placeholder {
+      font-family: 'Futura';
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 500;
+      color: $white;
+      letter-spacing: -1px;
     }
+  }
+  &:focus {
+    outline: none;
+    border-color: $main-color;
+  }
+}
+
+.checkbox_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--checkbox {
+    width: 18px;
+    height: 18px;
+    background-color: $main-color;
+    color: $white;
+    margin-right: 5px;
+  }
+  &--checkbox_title {
+    font-family: 'Futura';
+    font-size: 16px;
+    line-height: 22px;
+    color: $white;
+    letter-spacing: -1px;
+  }
+}
+
+.broadcast_container {
+  display: block;
+  padding-top: 2.7%;
+  &--form_container {
+    margin-top: -528px;
+    padding-top: 528px;
+    margin-bottom: 10.2%;
+  }
+  &--video_box {
+    position: relative;
+    display: inline-block;
+    max-width: 817px;
+    width: 100%;
+    max-height: 434px;
+    margin-top: 30px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+    background: #000000;
+    margin: 30px auto 41px;
+    font-size: 0;
+    object-fit: fill;
   }
   &--info {
     max-width: 681px;
+    padding-bottom: 6.6%;
+    letter-spacing: -1px;
+    &::before {
+      content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='55px' height='2px' fill='red'><path d='M1 1 h 55 ' stroke='rgb(227, 184, 114)' stroke-width='2'/></svg>");
+      display: block;
+      margin: 0 auto 2.1%;
+    }
+  }
+  &--form {
+    max-width: 770px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    .input_container--title,
+    .input_container--input,
+    .input_container--input::placeholder,
+    .checkbox_container--checkbox_title {
+      color: $color36;
+      border-color: $color36;
+    }
+  }
+  &--input_container {
+    max-width: 231px;
+    flex: 1 1 auto;
+    &:first-child {
+      margin-right: 58px;
+    }
+  }
+  &--submit_button {
+    flex: 1 1 auto;
+    max-width: 200px;
+    margin-left: 49px;
+  }
+  &--checkbox_container {
+    flex: 2 0 auto;
+    text-align: center;
+    margin-top: 30px;
   }
 }
 
@@ -399,6 +596,7 @@ $main-color: #e3b873;
   position: relative;
   width: 100%;
   height: 100%;
+  opacity: 0.2;
   &--play_button {
     position: absolute;
     left: 50%;
@@ -415,16 +613,17 @@ $main-color: #e3b873;
   display: flex;
   justify-content: space-between;
   padding: 0;
+  margin: 0 auto;
   list-style-type: none;
   &--item:not(:last-child) {
-    padding-right: 20px;
+    padding-right: 2%;
   }
 }
 
 .repair_types_container {
   &--card_list {
     max-width: 1236px;
-    margin: 0 auto;
+    margin: 2.2% auto 1.6%;
   }
 }
 
@@ -433,35 +632,52 @@ $main-color: #e3b873;
   &--image {
     width: 100%;
     max-height: 421px;
+    opacity: 1;
   }
   &--full_info {
-    transform: translate(0, -127px);
     max-width: 330px;
     margin: 0 auto;
     padding: 0 25px;
+    position: relative;
+    top: -17.2%;
   }
 }
 
 .card_details {
-  padding-left: 10%;
-  background-color: #ffffff;
+  padding: 10px 0 16.5% 10%;
+  background-color: $white;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
   text-align: left;
   &--title {
+    margin-top: 14px;
+    margin-bottom: 7px;
     font-family: 'Yeseva One';
     font-size: 18px;
     line-height: 25px;
-    color: #363636;
+    color: $color36;
   }
   &--list {
-    padding-left: 0;
-    list-style: disc inside;
+    padding-left: 8px;
+    list-style: none;
+  }
+  &--item {
     font-family: 'Futura';
     font-size: 15px;
     line-height: 25px;
-    color: #959595;
-  }
-  &--item {
+    color: $color95;
+    vertical-align: middle;
+    letter-spacing: -1px;
+    &::before {
+      content: '';
+      position: relative;
+      top: -3px;
+      left: -3px;
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 100%;
+      background-color: $color95;
+    }
   }
   &--add_box {
     max-width: 228px;
@@ -473,71 +689,42 @@ $main-color: #e3b873;
     text-align: center;
     font-family: 'Yeseva One';
     background-color: $main-color;
-    color: #ffffff;
+    color: $white;
     transform: translate(0, -50%);
   }
 }
 
-@each $num, $deg in (1, -50deg), (2, -30deg), (3, 5deg), (4, 35deg) {
+@each $num, $deg in (1, -48deg), (2, -23deg), (3, 7deg), (4, 39deg) {
   .ellipse_box--item:nth-child(#{$num}) {
-    transform: translate(-50%, 50%) rotate($deg) translate(300px) rotate(-$deg);
-  }
-}
-
-.request_section {
-  display: flex;
-  justify-content: space-between;
-  &--advantages_container {
-    max-width: 1000px;
-  }
-  &--form_container {
-    max-width: 506px;
-    padding: 0 20px;
-  }
-  &--form {
-    max-width: 408px;
-    padding: 0 49px;
-    background: #131313;
-    box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.05);
-  }
-  &--form_title {
-    display: block;
-    max-width: 297px;
-    font-family: 'Futura';
-    font-size: 20px;
-    line-height: 25px;
-    text-align: center;
-    color: #ffffff;
+    transform: translate(-50%, 50%) rotate($deg) translate(316px) rotate(-$deg);
   }
 }
 
 .advantages_container {
   display: inline-block;
-  max-width: 840px;
+  max-width: 834px;
   width: 100%;
   background: url('../assets/images/building_bg.png') no-repeat 0 -60px;
   &--ellipse_box {
     margin-left: -150px;
   }
-  &--item {
-  }
   &--adv_number {
     font-family: 'Yeseva One';
-    color: #ffffff;
+    color: $white;
     font-size: 18px;
   }
   &--adv_text {
     font-family: 'Futura';
     font-weight: bolder;
     font-size: 18px;
-    color: #363636;
+    color: $color36;
   }
 }
 
 .ellipse_box {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 625px;
+  height: 625px;
   border-radius: 50%;
   border: 3px solid $main-color;
   &--item {
@@ -545,6 +732,11 @@ $main-color: #e3b873;
     bottom: 50%;
     position: absolute;
     transform: translate(-50%, 50%);
+    &:last-child {
+      .ellipse_box--item_text {
+        max-width: 205px;
+      }
+    }
   }
   &--marker {
     display: inline-block;
@@ -555,68 +747,31 @@ $main-color: #e3b873;
     background-color: $main-color;
     text-align: center;
     vertical-align: middle;
-    border: 10px solid #ffffff;
+    border: 10px solid $white;
   }
   &--item_text {
     position: absolute;
     width: 410px;
-    padding-left: 20px;
+    padding-left: 5px;
     transform: translate(0, 50%);
     bottom: 50%;
     line-height: 21px;
-  }
-}
-
-.input_container {
-  &--title {
-    display: block;
     font-family: 'Futura';
-    font-size: 15px;
-    line-height: 20px;
-    color: #ffffff80;
-  }
-  &--input {
-    width: 100%;
-    display: block;
-    height: 50px;
-    color: #ffffff;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #ffffff26;
-    &::placeholder {
-      font-family: 'Futura';
-      font-size: 18px;
-      line-height: 25px;
-      color: #ffffff;
-    }
-    &:focus {
-      outline: none;
-      border-color: $main-color;
-    }
-  }
-}
-
-.checkbox_container {
-  &--checkbox {
-    width: 18px;
-    height: 18px;
-    background-color: $main-color;
-    color: #ffffff;
-  }
-  &--checkbox_title {
-    font-family: 'Futura';
-    font-size: 16px;
-    line-height: 22px;
-    color: #ffffff;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: $color36;
   }
 }
 
 .bonus_container {
-  max-width: 320px;
+  max-width: 345px;
   &--icon_box {
     display: inline-block;
     width: 72px;
     height: 72px;
+    margin-right: 6.5%;
     border-radius: 100%;
     background-color: $main-color;
     line-height: 72px;
@@ -628,13 +783,68 @@ $main-color: #e3b873;
   }
   &--offer {
     display: inline-block;
-    max-width: 230px;
+    max-width: 240px;
     vertical-align: middle;
     font-family: 'Futura';
     font-size: 20px;
     line-height: 25px;
+    font-weight: 500;
     color: $main-color;
     text-shadow: 0px 3px 10px rgba($main-color, 0.15);
+  }
+}
+
+.request_section {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 16.8%;
+  &--advantages_container {
+    flex: 1 0 auto;
+  }
+  &--form_container {
+    flex: 0 1 auto;
+    max-width: 506px;
+    width: 100%;
+    padding-top: 3.5%;
+  }
+  &--form {
+    max-width: 408px;
+    margin-bottom: 7.8%;
+    padding: 4.8% 49px;
+    background: $color13;
+    box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.05);
+  }
+  &--form_title {
+    display: block;
+    max-width: 295px;
+    margin: 0 auto;
+    padding-bottom: 9.5%;
+    font-family: 'Futura';
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: $white;
+  }
+  &--input_container {
+    &:not(:nth-child(4)) {
+      margin-bottom: 12.2%;
+    }
+    .input {
+      padding-bottom: 7px;
+    }
+  }
+  &--checkbox_container {
+    justify-content: left;
+    margin-top: 4.2%;
+  }
+  &--submit_button {
+    display: block;
+    max-width: 213px;
+    margin-left: auto;
+    margin-top: 9%;
+  }
+  &--bonus_container {
+    margin-left: 6.5%;
   }
 }
 
@@ -648,9 +858,10 @@ $main-color: #e3b873;
   background-blend-mode: color;
   &--container {
     max-width: 300px;
-    padding-top: 90px;
+    padding-top: 9%;
   }
   &--slogan {
+    margin-bottom: 13%;
     font-family: 'Yeseva One';
     font-size: 27px;
     line-height: 37px;
@@ -659,16 +870,17 @@ $main-color: #e3b873;
   }
   &--photos_area {
     display: flex;
-    flex-flow: column wrap;
     align-content: space-between;
-    max-width: 800px;
-    max-height: 1200px;
+    flex-flow: column wrap;
+    max-width: 794px;
     width: 100%;
+    max-height: 1200px;
+    margin-top: -9%;
   }
   &--photo_wrapper {
     box-sizing: border-box;
-    padding-bottom: 38px;
-    padding-left: 43px;
+    padding-bottom: 4.2%;
+    padding-left: 5.4%;
     max-width: 50%;
     &:first-child {
       margin-top: 72px;
@@ -677,10 +889,9 @@ $main-color: #e3b873;
       margin-bottom: 81px;
     }
   }
-}
-
-.interiors_section--photo > img {
-  width: 100%;
+  &--photo {
+    width: 100%;
+  }
 }
 
 .interior_list {
@@ -689,10 +900,10 @@ $main-color: #e3b873;
   font-family: 'Proxima Nova';
   font-size: 20px;
   line-height: 34px;
-  color: #ffffff;
+  color: $white;
   &--style_box {
     &:not(:last-child) {
-      margin-bottom: 0.5em;
+      margin-bottom: 5%;
     }
   }
   &--style_name {
@@ -708,23 +919,42 @@ $main-color: #e3b873;
 .work_steps_section {
   display: flex;
   justify-content: space-between;
-  padding-left: 6.9%;
-  padding-right: 7%;
+  padding: 29.5% 7% 0 6.9%;
+  margin-top: -42.3%;
+  margin-bottom: 6%;
   &--note {
     font-family: 'Futura';
     font-size: 15px;
     line-height: 21px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $white;
   }
   &--caption {
+    position: relative;
+    max-width: 6em;
+    margin-top: 4%;
+    margin-bottom: 25.8%;
     font-family: 'Yeseva One';
     font-size: 27px;
     line-height: 37px;
     text-transform: uppercase;
     color: $main-color;
+    &::after {
+      content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='92px' height='2px' fill='red'><path d='M1 1 h 102 ' stroke='rgb(227, 184, 114)' stroke-width='2'/></svg>");
+      position: absolute;
+      top: 29px;
+      left: 212px;
+    }
   }
   &--slider {
+    margin-top: 29.6%;
+  }
+  &--column_right {
+    padding-top: 6%;
+  }
+  &--step_photo {
+    margin-top: 8%;
+    max-width: 100%;
   }
 }
 
@@ -734,9 +964,12 @@ $main-color: #e3b873;
     font-size: 18px;
     line-height: 25px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $white;
   }
   &--step_name {
+    max-width: 15em;
+    margin-top: 5.3%;
+    margin-bottom: 2.7%;
     font-family: 'Yeseva One';
     font-size: 15px;
     line-height: 23px;
@@ -744,21 +977,38 @@ $main-color: #e3b873;
     color: $main-color;
   }
   &--step_description {
+    max-width: 22em;
+    margin-top: 2.7%;
     font-family: 'Futura';
     font-size: 15px;
     line-height: 25px;
-    color: #ffffff;
+    letter-spacing: -1px;
+    color: $white;
   }
 }
 
 .design_classes_container {
+  background-color: $white;
+  padding-top: 9.3%;
+  margin-top: -5.5%;
+  &--info {
+    max-width: 680px;
+    padding-top: 1.4%;
+    padding-bottom: 3.2%;
+    line-height: 27px;
+    text-indent: 20px;
+  }
   &--card_list {
     max-width: 1236px;
-    margin: 0 auto;
+    .card--full_info {
+      top: -14.6%;
+    }
+    .card_details--add_box {
+      text-align: start;
+      box-sizing: border-box;
+      padding: 0 10.5%;
+    }
   }
-}
-
-.work_steps_section {
 }
 
 .step_list {
@@ -766,40 +1016,69 @@ $main-color: #e3b873;
   list-style-type: none;
   grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   padding-left: 0;
-  align-items: flex-end;
+  align-items: baseline;
+  column-gap: 1em;
+  row-gap: 17%;
   &--item {
-    max-width: 130px;
     opacity: 0.3;
     &-active {
       opacity: 1;
     }
+    &:last-child {
+      padding-top: 3.8%;
+    }
+    &:nth-child(3n + 1) {
+      max-width: 115px;
+      color: red;
+    }
+    &:nth-child(3n + 2) {
+      max-width: 120px;
+      justify-self: center;
+      padding-left: 13px;
+    }
+    &:nth-child(3n) {
+      max-width: 100px;
+      justify-self: end;
+    }
   }
   &--step_num {
     display: block;
+    max-width: 1.1em;
+    margin-bottom: 6%;
+    border-bottom: 1px solid $main-color;
     font-family: 'Yeseva One';
     font-size: 15px;
     line-height: 21px;
     text-transform: uppercase;
-    color: #ffffff;
-    border-bottom: 1px solid $main-color;
-    padding-bottom: 4px;
-    max-width: 16px;
+    color: $white;
   }
   &--step_name {
+    display: block;
     font-family: 'Futura';
     font-size: 15px;
     line-height: 18px;
-    color: #ffffff;
+    letter-spacing: -1px;
+    color: $white;
   }
 }
 
 .team_container {
   &--card_list {
-    max-width: 1064px;
-    margin: 0 auto;
+    max-width: 1028px;
+    margin-bottom: -3.7%;
+  }
+  &--details {
+    max-width: 22em;
+    padding-top: 1.3%;
+    padding-bottom: 5.6%;
+    line-height: 1.35;
   }
   &--info {
-    max-width: 558px;
+    &::before {
+      content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='55px' height='2px' fill='red'><path d='M1 1 h 55 ' stroke='rgb(227, 184, 114)' stroke-width='2'/></svg>");
+      display: block;
+    }
+    max-width: 23em;
   }
 }
 
@@ -818,70 +1097,102 @@ $main-color: #e3b873;
     vertical-align: middle;
     text-align: center;
   }
+  &--image {
+    width: 100%;
+  }
   &--full_info {
+    position: relative;
+    top: -83px;
     max-width: 233px;
+    width: 100%;
     margin: 0 auto;
-    background: #ffffff;
+    padding-top: 8%;
+    background: $white;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
   }
   &--name {
+    margin: 0;
     font-family: 'Yeseva One';
     font-size: 18px;
     line-height: 25px;
     text-align: center;
-    color: #181818;
+    color: $color18;
   }
   &--profession {
     font-family: 'Futura';
     font-size: 18px;
     line-height: 26px;
+    letter-spacing: -1px;
     text-align: center;
-    color: #959595;
+    color: $color95;
   }
   &--add_box {
     width: 100%;
     height: 44px;
+    line-height: 44px;
+    margin-top: 8.5%;
     background-color: $main-color;
   }
   &--add_text {
+    display: inline-block;
     font-family: 'Yeseva One';
     font-size: 13px;
     line-height: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $white;
   }
 }
 
 .clients_container {
+  margin-top: -29.8%;
+  padding-top: 35.3%;
+  padding-bottom: 26.9%;
+  &--info {
+    max-width: 18em;
+    padding-top: 1.2%;
+    line-height: 27px;
+  }
   &--card_list {
+    max-width: 1236px;
+    margin-top: 3.4%;
   }
 }
 
 .client_card {
   max-width: 376px;
+  text-align: left;
   &--main {
-    background: #ffffff;
+    height: 90.4%;
+    padding: 6% 5.8%;
+    background: $white;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04);
   }
   &--avatar {
+    text-align: left;
     display: inline-block;
     width: 76px;
     height: 76px;
+    margin-right: 1.2em;
+    vertical-align: middle;
     border-radius: 100%;
   }
   &--name {
     display: inline-block;
+    max-width: 9em;
+    margin: 0;
+    vertical-align: middle;
     font-family: 'Yeseva One';
     font-size: 18px;
     line-height: 23px;
-    color: #181818;
+    color: $color18;
   }
   &--feedback {
     font-family: 'Futura';
     font-size: 15px;
-    line-height: 180%;
-    color: #959595;
+    line-height: 1.8;
+    letter-spacing: -0.8px;
+    color: $color95;
   }
   &--add_box {
     transform: translate(0, -50%);
@@ -896,48 +1207,143 @@ $main-color: #e3b873;
   background: $main-color;
   box-shadow: 5px 5px 20px rgba($main-color, 0.5);
   font-size: 0;
-  &--area_sector {
+  &--sector {
+    box-sizing: border-box;
     flex-grow: 1;
     max-width: 135px;
     height: 54px;
-    border-right: 1px solid #ffffff;
+    padding: 0 6px;
+    line-height: 54px;
+    border-right: 1px solid $white;
+    text-indent: 8%;
+    &:last-child {
+      max-width: 159px;
+      border: none;
+      .add_box--text::before {
+        content: url('../assets/icons/tablet.svg');
+      }
+    }
   }
-  &--area {
-    text-align: center;
+  &--text {
+    box-sizing: border-box;
     font-family: 'Yeseva One';
     font-size: 17px;
-    line-height: 54px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $white;
     &::before {
       content: url('../assets/icons/graph.svg');
       display: inline-block;
       width: 32px;
-      height: 31px;
-      vertical-align: middle;
-    }
-  }
-  &--date_sector {
-    flex-grow: 1;
-    max-width: 159px;
-    height: 54px;
-  }
-  &--date {
-    font-family: 'Yeseva One';
-    font-size: 17px;
-    line-height: 54px;
-    text-transform: uppercase;
-    color: #ffffff;
-    &::before {
-      content: url('../assets/icons/tablet.svg');
-      display: inline-block;
-      width: 33px;
-      height: 32px;
+      height: 33px;
+      padding-right: 13%;
       vertical-align: middle;
     }
   }
 }
 
+.contacts_section {
+  padding-top: 9.3%;
+  padding-bottom: 4.2%;
+  background: url('../assets/images/bg.png') no-repeat,
+    linear-gradient(
+      180deg,
+      rgba(24, 24, 24, 0.9) 3.47%,
+      rgba(24, 24, 24, 0.72) 100%
+    );
+  background-blend-mode: color;
+  &--form_container {
+    box-sizing: border-box;
+    max-width: 883px;
+    margin: -24.8% auto 3.6%;
+    padding: 2.2% 5%;
+    background-color: $color18;
+  }
+  &--form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  &--form_title {
+    flex: 1 0 100%;
+    margin-bottom: 8.2%;
+    font-family: 'Yeseva One';
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+  }
+  &--input_container {
+    display: inline-block;
+    flex: 0.5 1 auto;
+    margin-bottom: 9%;
+    &:first-of-type {
+      margin-right: 10%;
+    }
+    &:nth-of-type(3) {
+      flex: 1 0 100%;
+    }
+  }
+  &--checkbox_container {
+    flex: 1 0 100%;
+  }
+  &--submit_button {
+    flex: 1 0 100%;
+    max-width: 200px;
+    margin-top: 8.8%;
+  }
+  &--info {
+    display: block;
+    font-family: 'Yeseva One';
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $main-color;
+  }
+  &--socials {
+    margin: 1.8% auto 2.9%;
+    text-align: center;
+  }
+  &--location_box {
+    margin: 0 auto;
+  }
+}
+
+.location_box {
+  max-width: 925px;
+  &--map {
+    width: 100%;
+  }
+}
+
+.socials {
+  font-size: 0;
+  &--item_link {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-color: $main-color;
+    border-radius: 100%;
+    line-height: 28px;
+    text-align: center;
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+  &--icon {
+    vertical-align: middle;
+  }
+}
+
 .footer {
-  background-color: #131313;
+  @extend .header;
+  padding: 50px 5% 50px 6.3%;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 24, 0.9) 3.47%,
+    rgba(24, 24, 24, 0.72) 100%
+  );
 }

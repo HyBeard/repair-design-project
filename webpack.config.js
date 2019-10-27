@@ -33,11 +33,12 @@ module.exports = {
               hmr: process.env.NODE_ENV === 'development'
             }
           },
-          'css-loader','sass-loader'
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -61,7 +62,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/html/index.html',
+      template: path.join(__dirname, './index.html'),
       inject: 'body'
     }),
     new MiniCssExtractPlugin({})
