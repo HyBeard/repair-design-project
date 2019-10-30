@@ -2,112 +2,100 @@
 
 @font-face {
   font-family: 'Futura';
-  src: url('../assets/fonts/Futura\ Book\ font.ttf') format('truetype');
+  src: url('../assets/fonts/FuturaBook.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Futura';
-  src: url('../assets/fonts/futura\ medium\ bt.ttf') format('truetype');
+  src: url('../assets/fonts/FuturaMedium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Yeseva One';
-  src: url('../assets/fonts/YesevaOne-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/YesevaOneRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Proxima Nova';
-  src: url('../assets/fonts/ProximaNova-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/ProximaNovaRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-$main-color: rgb(227, 184, 114);
-$white: #ffffff;
-$color13: #131313;
-$color36: #363636;
-$color18: #181818;
-$color95: #959595;
-// $main-color: rgb(59, 59, 255);
-// $white: rgb(255, 185, 185);
-// $color13: rgb(42, 71, 71);
-// $color36: #ff0000;
-// $color18: #8968ff;
-// $color95: #22f0ff;
+$main_color: #e3b872;
+$contrast_color: #ffffff;
+$gray-13: #131313;
+$gray-36: #363636;
+$gray-18: #181818;
+$gray-95: #959595;
+
+$screen-xs: 480px;
+$screen-sm: 640px;
+$screen-md: 760px;
+$screen-lg: 960px;
+$screen-xl: 1280px;
+
+$font-regular: 'Futura', 'Roboto', sans-serif;
+$font-rare: 'Proxima Nova', 'Verdana', sans-serif;
+$font-header: 'Yeseva One', 'Georgia', serif;
+
+%font-medium {
+  font-family: $font-regular;
+  font-weight: 500;
+}
 
 .wrap {
-  background-color: $color13;
+  background-color: $gray-13;
+
   &-color-white {
-    background-color: $white;
+    background-color: $contrast_color;
   }
+
   &--content {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 1.5%;
-  }
-}
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  padding: 24px 5.7% 22px;
-  &--logo {
-    padding-right: 18px;
-    font-weight: 500;
-  }
-  &--nav_box {
-    flex: 1 1 auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-  &--contact_number {
-    border-bottom: 1px solid $main-color;
-    white-space: nowrap;
-    font-family: 'Futura';
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 500;
-    color: $main-color;
-    word-spacing: -1px;
-    text-decoration: none;
-  }
-  &--call_button {
-    margin-left: 3.3%;
-    margin-right: 1.45%;
+    @media screen and (max-width: $screen-lg) {
+      padding: 0 3%;
+    }
   }
 }
 
 .logo {
-  font-family: 'Futura';
   font-size: 14px;
-  line-height: 16px;
-  font-weight: 500;
+  line-height: 2.64;
+  @extend %font-medium;
   text-transform: uppercase;
-  color: $main-color;
+  color: $main_color;
   white-space: nowrap;
 }
 
 .navbar {
   display: flex;
-  max-width: 602px;
+  max-width: 592px;
   justify-content: space-between;
   margin: 0 auto;
+
   &--link {
-    padding: 0 10px;
-    font-family: 'Futura';
+    padding: 0 0.5em;
+    font-family: $font-regular;
     font-size: 14px;
     text-decoration: none;
-    color: $white;
+    color: $contrast_color;
+
+    @media screen and (max-width: $screen-lg) {
+      font-size: 12px;
+    }
+
     &-active {
-      color: $main-color;
+      color: $main_color;
     }
   }
 }
@@ -123,21 +111,85 @@ $color95: #959595;
   height: 51px;
   outline: none;
   white-space: nowrap;
-  background-color: $main-color;
-  color: $white;
-  font-family: 'Futura';
+  background-color: $main_color;
+  color: $contrast_color;
   font-size: 13px;
-  line-height: 15px;
-  font-weight: 500;
+  line-height: 1.15;
+  @extend %font-medium;
   text-transform: uppercase;
-  box-shadow: 0px 5px 15px rgba($main-color, 0.2);
+  box-shadow: 0px 5px 15px rgba($main_color, 0.2);
   border-radius: 2px;
   border: none;
+  letter-spacing: -1px;
+
   &-size-s {
     width: 161px;
     height: 37px;
     font-size: 13px;
-    box-shadow: 0px 5px 15px rgba($main-color, 0.2);
+    box-shadow: 0px 5px 15px rgba($main_color, 0.2);
+  }
+}
+
+.header {
+  &--wrapper {
+    display: flex;
+    max-width: 1276px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 24px 1.5% 22px;
+
+    @media screen and (max-width: $screen-sm) {
+      padding: 12px 4%;
+    }
+  }
+
+  &--logo {
+    padding-right: 18px;
+
+    @media screen and (max-width: $screen-lg) {
+      font-size: 12px;
+    }
+  }
+
+  &--nav_box {
+    flex: 1 1 auto;
+    padding: 0 20px;
+    text-align: center;
+
+    @media screen and (max-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &--contact_number {
+    border-bottom: 1px solid $main_color;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.14;
+    @extend %font-medium;
+    color: $main_color;
+    word-spacing: -1px;
+    text-decoration: none;
+
+    @media screen and (max-width: $screen-lg) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      color: $contrast_color;
+      border: none;
+    }
+  }
+
+  &--call_button {
+    margin-left: 3.3%;
+    margin-right: 1.45%;
+
+    @media screen and (max-width: $screen-xl) {
+      display: none;
+    }
   }
 }
 
@@ -145,140 +197,269 @@ $color95: #959595;
   display: flex;
   position: relative;
   margin-bottom: 6.25%;
+
+  @media screen and (max-width: $screen-sm) {
+    margin-bottom: 36px;
+  }
+
+  &--outer_wrap {
+    @media screen and (max-width: $screen-lg) {
+      padding-left: 0;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      padding: 0;
+    }
+  }
+
   &--socials_box {
     width: 5.7%;
-    margin-bottom: 95px;
+    margin-bottom: 6.8%;
     align-self: center;
     white-space: nowrap;
     text-align: center;
+
+    @media screen and (max-width: $screen-sm) {
+      display: none;
+    }
   }
+
   &--social_link {
     display: inline-block;
-    font-family: 'Futura';
     font-size: 14px;
-    line-height: 16px;
-    font-weight: 500;
-    color: $main-color;
+    line-height: 1.14;
+    @extend %font-medium;
+    color: $main_color;
     text-decoration: none;
     writing-mode: vertical-rl;
+
+    @media screen and (max-width: $screen-lg) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      display: none;
+    }
+
     &::after {
       content: '';
       display: inline-block;
       width: 1px;
       height: 51px;
       margin-top: 10px;
-      background-color: $main-color;
+      background-color: $main_color;
     }
   }
+
   &--inner_bg {
     box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     min-height: 707px;
-    width: 94.3%;
-    padding-left: 4.15%;
-    background: url('../assets/images/promo_sec_bg.png') rgba(0, 0, 0, 0.7);
+    flex-grow: 1;
+    padding: 0 4.25%;
+    background: center / cover url('../assets/images/promo_sec_bg.png')
+      rgba(0, 0, 0, 0.7);
     background-blend-mode: color;
+
+    @media screen and (max-width: $screen-lg) {
+      min-height: 476px;
+      padding-top: 45px;
+    }
   }
+
   &--scroll_button {
     position: absolute;
     bottom: 0;
     left: 0;
     transform: translate(0, 50%);
   }
+
   &--special_offer {
     margin-bottom: 17px;
   }
 }
 
 .scroll_button {
-  background: $color13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 247px;
   height: 97px;
+  background: $gray-13;
+
+  @media screen and (max-width: $screen-sm) {
+    display: none;
+  }
+
+  &::after {
+    content: url('../assets/icons/tick.svg');
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-left: 18px;
+    border-radius: 100%;
+    border: 2px solid $main_color;
+    line-height: 26px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
   &--text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 14px;
-    color: $white;
+    color: $contrast_color;
     text-transform: uppercase;
     text-decoration: none;
-    &::after {
-      content: url('../assets/icons/tick.svg');
-      display: inline-block;
-      width: 26px;
-      height: 26px;
-      margin-left: 18px;
-      border-radius: 100%;
-      border: 2px solid $main-color;
-      line-height: 26px;
-      vertical-align: middle;
-      text-align: center;
-    }
   }
 }
 
 .special_offer {
-  max-width: 515px;
   font-size: 0;
+
   &--caption {
-    margin: 0 0 13px 0;
-    font-family: 'Yeseva One';
-    font-weight: normal;
+    max-width: 14em;
+    margin: 0 0 0.4em 0;
+    font-family: $font-header;
     font-size: 40px;
-    line-height: 53px;
+    line-height: 1.325;
     text-transform: uppercase;
-    color: $white;
+    color: $contrast_color;
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 23px;
+    }
+
     &-colored {
-      color: $main-color;
+      color: $main_color;
     }
   }
+
   &--details {
-    margin: 0 0 47px 0;
+    margin: 0 0 2.2em 0;
     max-width: 446px;
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 22px;
-    line-height: 30px;
+    line-height: 1.36;
     letter-spacing: -1px;
-    color: $white;
+    color: $contrast_color;
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 18px;
+    }
   }
+
   &--cost_button {
-    margin-right: 21px;
+    margin-right: 20px;
+
+    @media screen and (max-width: $screen-xs) {
+      max-width: initial;
+      margin: 0 0 26px;
+    }
   }
+
   &--submit_button {
     background-color: transparent;
-    border: 1px solid $white;
+    border: 1px solid $contrast_color;
+
+    @media screen and (max-width: $screen-xs) {
+      max-width: initial;
+    }
+  }
+}
+
+.project_list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 643px;
+  padding-left: 3.5%;
+  list-style-type: none;
+
+  &--item {
+    padding: 0 0.5em;
+  }
+
+  &--link {
+    display: inline-block;
+    box-sizing: border-box;
+    padding-bottom: 6px;
+    text-decoration: none;
+    font-family: $font-header;
+    font-size: 14px;
+    line-height: 1.36;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+
+    &-active {
+      color: $main_color;
+      border-bottom: 1px solid $main_color;
+    }
   }
 }
 
 .work_examples_section {
   display: grid;
+  max-width: 1338px;
+  margin-left: auto;
   grid-template-areas:
     '. names'
     'info carousel'
     'params carousel'
     'slider carousel';
-  padding-left: 7%;
   padding-bottom: 10px;
-  &--project_names {
-    grid-area: names;
+
+  @media screen and (max-width: 1136px) {
+    grid-template-areas:
+      'info names'
+      'info carousel'
+      'params carousel'
+      'slider carousel';
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
   }
+
+  @media screen and (max-width: $screen-lg) {
+    grid-template-areas:
+      'info'
+      'names'
+      'carousel'
+      'params';
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+
+  &--outer_wrap {
+    margin-bottom: -383px;
+    padding-bottom: 383px;
+  }
+
   &--info {
     grid-area: info;
+
+    @media screen and (max-width: $screen-lg) {
+      text-align: center;
+    }
   }
+
   &--caption {
     position: relative;
-    max-width: 155px;
-    margin-top: 26px;
-    font-family: 'Yeseva One';
+    max-width: 6em;
+    margin-top: 6%;
+    font-family: $font-header;
     font-size: 27px;
-    line-height: 37px;
+    line-height: 1.37;
     letter-spacing: -0.07em;
     text-transform: uppercase;
-    color: $main-color;
+    color: $main_color;
+
+    @media screen and (max-width: $screen-lg) {
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 22px;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -287,55 +468,67 @@ $color95: #959595;
       left: 163px;
       width: 92px;
       height: 1px;
-      background-color: $main-color;
+      background-color: $main_color;
+
+      @media screen and (max-width: $screen-lg) {
+        display: none;
+      }
     }
   }
+
   &--note {
-    max-width: 420px;
-    font-family: 'Futura';
+    max-width: 24em;
+    font-family: $font-regular;
     font-size: 18px;
-    line-height: 29px;
+    line-height: 1.61;
     letter-spacing: -1px;
-    color: $white;
+    color: $contrast_color;
+
+    @media screen and (max-width: $screen-sm) {
+      max-width: 21.2em;
+      margin-top: 25px;
+      margin-bottom: 38px;
+      font-size: 14px;
+    }
   }
+
+  &--project_names {
+    grid-area: names;
+
+    @media screen and (max-width: $screen-lg) {
+      max-width: 800px;
+      width: 100%;
+      justify-content: space-around;
+      padding: 0;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      display: none;
+    }
+  }
+
   &--params_list {
     grid-area: params;
   }
+
   &--slider {
     grid-area: slider;
     margin-top: 6px;
+
+    @media screen and (max-width: $screen-lg) {
+      display: none;
+    }
   }
+
   &--carousel {
-    padding-top: 28px;
+    padding-top: 3%;
     grid-area: carousel;
     justify-self: end;
     max-width: 865px;
     font-size: 0;
-  }
-}
 
-.project_list {
-  display: flex;
-  justify-content: space-between;
-  max-width: 643px;
-  padding-left: 40px;
-  list-style-type: none;
-  &--item {
-    padding: 0 10px;
-  }
-  &--link {
-    display: inline-block;
-    box-sizing: border-box;
-    padding-bottom: 6px;
-    text-decoration: none;
-    font-family: 'Yeseva One';
-    font-size: 14px;
-    line-height: 19px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.3);
-    &-active {
-      color: $main-color;
-      border-bottom: 1px solid $main-color;
+    @media screen and (max-width: $screen-lg) {
+      padding: 0;
     }
   }
 }
@@ -345,32 +538,73 @@ $color95: #959595;
   grid-template: auto auto/1fr 1fr;
   max-width: 382px;
   padding-left: 0;
-  margin-top: 1.75em;
+  margin-top: 2.05em;
+  margin-bottom: 1.3em;
   list-style-type: none;
-  &--parameter {
-    min-height: 110px;
-    font-family: 'Yeseva One';
-    font-size: 18px;
-    line-height: 25px;
-    text-transform: uppercase;
-    color: $main-color;
+
+  @media screen and (max-width: $screen-lg) {
+    grid-template: auto/1fr 1fr 1fr 1fr;
+    max-width: 100%;
+    width: 100%;
+    column-gap: 2em;
+    justify-items: center;
+    text-align: center;
   }
+
+  @media screen and (max-width: $screen-xs) {
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-top: 2.45em;
+    grid-template: auto / 30% 40%;
+    justify-items: left;
+    column-gap: 58px;
+    row-gap: 32px;
+    text-align: left;
+  }
+
+  &--parameter {
+    min-height: 6em;
+    font-family: $font-header;
+    font-size: 18px;
+    line-height: 1.39;
+    text-transform: uppercase;
+    color: $main_color;
+
+    @media screen and (max-width: $screen-lg) {
+      min-height: auto;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 14px;
+    }
+  }
+
   &--parameter_details {
     display: block;
     max-width: 100px;
     margin-top: 0.1em;
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 15px;
-    line-height: 20px;
-    color: $white;
+    line-height: 1.33;
+    color: $contrast_color;
     text-transform: none;
     letter-spacing: -1px;
+
+    @media screen and (max-width: $screen-lg) {
+      max-width: none;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 14px;
+      margin-top: 0.6em;
+    }
   }
 }
 
 .arrow_slider {
   padding-left: 0;
   list-style-type: none;
+
   &--breakpoint {
     display: inline-block;
     width: 10px;
@@ -378,12 +612,14 @@ $color95: #959595;
     margin: 0 7px;
     border-radius: 10px;
     font-size: 0;
-    background-color: $white;
+    background-color: $contrast_color;
     opacity: 0.3;
+
     &-active {
       opacity: 1;
     }
   }
+
   &::after {
     content: url('../assets/icons/arrow.svg');
     display: inline-block;
@@ -392,6 +628,7 @@ $color95: #959595;
     transform: rotate(180deg);
     margin-left: 18px;
   }
+
   &::before {
     content: url('../assets/icons/arrow.png');
     display: inline-block;
@@ -406,6 +643,12 @@ $color95: #959595;
   max-height: 482px;
   overflow: hidden;
   white-space: nowrap;
+
+  @media screen and (max-width: $screen-lg) {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
   &--img_block {
     display: inline-block;
     max-width: 679px;
@@ -413,21 +656,44 @@ $color95: #959595;
     overflow: hidden;
     font-size: 0;
     box-shadow: 0px 50px 30px rgba(0, 0, 0, 0.15);
+
+    @media screen and (max-width: $screen-sm) {
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
     &:nth-child(2) {
       .carousel_container--img {
         position: relative;
         left: -135px;
       }
     }
+
+    @media screen and (max-width: $screen-lg) {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+    }
   }
+
   &--img {
     width: 100%;
     height: 100%;
   }
-  .slide_button {
+
+  &--slide_button {
     position: absolute;
     top: 46%;
     right: 5.3%;
+
+    &-back {
+      display: none;
+      left: 5.3%;
+
+      @media screen and (max-width: $screen-lg) {
+        display: block;
+      }
+    }
   }
 }
 
@@ -435,77 +701,89 @@ $color95: #959595;
   width: 55px;
   height: 55px;
   border-radius: 100%;
-  background: url('../assets/icons/tick.svg') center no-repeat $main-color;
+  background: url('../assets/icons/tick.svg') center no-repeat $main_color;
   background-size: 40%;
-  box-shadow: 0px 0px 15px rgba($main-color, 0.5);
+  box-shadow: 0px 0px 15px rgba($main_color, 0.5);
   background-blend-mode: color-dodge;
   transform: rotate(-90deg);
+
+  @media screen and (max-width: $screen-sm) {
+    width: 36px;
+    height: 36px;
+  }
+
+  &-back {
+    transform: rotate(90deg);
+  }
 }
 
 .main_container {
   text-align: center;
+
   &--title {
     margin-bottom: 12px;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 20px;
-    line-height: 28px;
+    line-height: 1.4;
     text-transform: uppercase;
-    color: $color18;
-    &-on_dark_bg {
-      color: $white;
+    color: $gray-18;
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 22px;
     }
   }
+
   &--icon {
     display: block;
     margin: 0 auto;
   }
+
   &--info {
     margin: 0 auto;
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 20px;
-    line-height: 34px;
+    line-height: 1.7;
     letter-spacing: -1px;
-    color: $color36;
-    &-on_dark_bg {
-      color: $white;
-    }
+    color: $gray-36;
   }
 }
 
 .input_container {
   &--title {
     display: block;
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 15px;
-    line-height: 20px;
-    color: $white;
+    line-height: 1.33;
+    letter-spacing: -1px;
+    color: $contrast_color;
     opacity: 0.5;
   }
+
   &--input {
     width: 100%;
     display: block;
     padding-bottom: 5px;
     border: none;
-    border-bottom: 1px solid rgba($white, 0.5);
+    border-bottom: 1px solid rgba($contrast_color, 0.5);
     background-color: transparent;
-    font-family: 'Futura';
     font-size: 18px;
-    line-height: 18px;
-    font-weight: 500;
+    line-height: 1;
+    @extend %font-medium;
     letter-spacing: -1px;
-    color: $white;
+    color: $contrast_color;
+
     &::placeholder {
-      font-family: 'Futura';
       font-size: 18px;
-      line-height: 18px;
-      font-weight: 500;
-      color: $white;
+      line-height: 1;
+      @extend %font-medium;
+      color: $contrast_color;
       letter-spacing: -1px;
     }
   }
+
   &:focus {
     outline: none;
-    border-color: $main-color;
+    border-color: $main_color;
   }
 }
 
@@ -513,73 +791,148 @@ $color95: #959595;
   display: flex;
   justify-content: center;
   align-items: center;
+
   &--checkbox {
     width: 18px;
     height: 18px;
-    background-color: $main-color;
-    color: $white;
+    background-color: $main_color;
+    color: $contrast_color;
     margin-right: 5px;
   }
+
   &--checkbox_title {
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 16px;
-    line-height: 22px;
-    color: $white;
+    line-height: 1.375;
+    color: $contrast_color;
     letter-spacing: -1px;
   }
 }
 
 .broadcast_container {
   display: block;
-  padding-top: 2.7%;
+  padding-top: 2.6%;
+
+  &--outer_wrap {
+    background-color: transparent;
+
+    @media screen and (max-width: $screen-sm) {
+      background-color: $gray-13;
+    }
+  }
+
+  &--title {
+    color: $contrast_color;
+  }
+
   &--form_container {
-    margin-top: -528px;
-    padding-top: 528px;
     margin-bottom: 10.2%;
   }
+
   &--video_box {
     margin: 30px auto 41px;
   }
+
   &--info {
-    max-width: 681px;
-    padding-bottom: 6.6%;
+    max-width: 34em;
+    margin-bottom: 6.6%;
     letter-spacing: -1px;
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 14px;
+      margin-bottom: 56px;
+      color: $contrast_color;
+    }
+
     &::before {
       content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='55px' height='2px' fill='red'><path d='M1 1 h 55 ' stroke='rgb(227, 184, 114)' stroke-width='2'/></svg>");
       display: block;
       margin: 0 auto 2.1%;
     }
   }
+
   &--form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     max-width: 770px;
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+
     .input_container--title,
     .input_container--input,
     .input_container--input::placeholder,
     .checkbox_container--checkbox_title {
-      color: $color36;
-      border-color: $color36;
+      color: $gray-36;
+      border-color: $gray-36;
+
+      @media screen and (max-width: $screen-sm) {
+        color: $contrast_color;
+      }
     }
   }
+
   &--input_container {
     max-width: 231px;
-    flex: 1 1 auto;
+    flex: 1 1 40%;
+
+    @media screen and (max-width: $screen-lg) {
+      flex-grow: 0;
+      box-sizing: border-box;
+      max-width: initial;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      flex-basis: 100%;
+      order: 1;
+      color: $contrast_color;
+    }
+
     &:first-child {
-      margin-right: 58px;
+      padding-right: 58px;
+
+      @media screen and (max-width: $screen-lg) {
+        padding: 0;
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        margin-bottom: 62px;
+      }
     }
   }
+
   &--submit_button {
     flex: 1 1 auto;
     max-width: 200px;
     margin-left: 49px;
+
+    @media screen and (max-width: $screen-lg) {
+      flex-basis: 100%;
+      margin: 20px 0;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      max-width: initial;
+      order: 3;
+    }
   }
+
   &--checkbox_container {
-    flex: 2 0 auto;
-    text-align: center;
+    flex: 1 0 100%;
     margin-top: 30px;
+
+    @media screen and (max-width: $screen-lg) {
+      margin-top: 0;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      order: 2;
+      justify-content: left;
+      margin: 26px 0px 40px;
+      padding: 0 7px;
+      box-sizing: border-box;
+      color: $contrast_color;
+    }
   }
 }
 
@@ -591,18 +944,25 @@ $color95: #959595;
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
   background: #000000;
   font-size: 0;
+
+  @media screen and (max-width: $screen-sm) {
+    margin: 44px 0 36px;
+  }
+
   &--video {
     display: none;
     position: absolute;
     width: 100%;
     height: 100%;
   }
+
   &--poster {
     position: relative;
     width: 100%;
     height: 100%;
     opacity: 0.2;
   }
+
   &--play_button {
     position: absolute;
     left: 50%;
@@ -611,7 +971,12 @@ $color95: #959595;
     height: 85px;
     transform: translate(-50%, -50%);
     border-radius: 85px;
-    background: url('../assets/icons/polygon.svg') no-repeat 50% 50% $main-color;
+    background: url('../assets/icons/polygon.svg') no-repeat 50% 50% $main_color;
+
+    @media screen and (max-width: $screen-sm) {
+      width: 37px;
+      height: 37px;
+    }
   }
 }
 
@@ -621,58 +986,136 @@ $color95: #959595;
   padding: 0;
   margin: 0 auto;
   list-style-type: none;
-  &--item:not(:last-child) {
-    padding-right: 2%;
-  }
-}
 
-.repair_types_container {
-  &--card_list {
-    max-width: 1236px;
-    margin: 2.2% auto 1.6%;
+  @media screen and (max-width: $screen-lg) {
+    display: block;
+  }
+
+  &--item {
+    @media screen and (max-width: $screen-lg) {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: $screen-sm) and (max-width: $screen-lg) {
+      display: flex;
+      justify-content: center;
+      padding-right: 0;
+      padding-bottom: 3%;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      display: inline-block;
+    }
+
+    &:not(:last-child) {
+      padding-right: 2%;
+
+      @media screen and (max-width: $screen-lg) {
+        padding: 1em 0;
+      }
+    }
   }
 }
 
 .card {
   max-width: 392px;
+
+  @media screen and (max-width: $screen-lg) {
+    max-width: initial;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    position: relative;
+    margin-bottom: 130px;
+  }
+
+  &--image_container {
+    display: inline-block;
+    font-size: 0;
+  }
+
   &--image {
     width: 100%;
+    height: 100%;
     max-height: 421px;
     opacity: 1;
+    object-fit: cover;
   }
+
   &--full_info {
     max-width: 330px;
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 20px;
     position: relative;
     top: -17.2%;
+
+    @media (min-width: $screen-sm) and (max-width: $screen-lg) {
+      width: 50%;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      position: absolute;
+      top: 58%;
+      width: 80%;
+      padding: 0;
+    }
   }
 }
 
 .card_details {
-  padding: 10px 0 16.5% 10%;
-  background-color: $white;
+  position: relative;
+  padding: 10px 0 17.2% 10%;
+  background-color: $contrast_color;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
   text-align: left;
+
+  @media screen and (max-width: $screen-lg) {
+    box-sizing: border-box;
+    padding: 1em 1em calc(1em + 54px);
+    height: 100%;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    padding: 1.3em 2.4em calc(1em + 40px);
+  }
+
   &--title {
     margin-top: 14px;
     margin-bottom: 7px;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 18px;
-    line-height: 25px;
-    color: $color36;
+    line-height: 1.39;
+    color: $gray-36;
+
+    @media screen and (max-width: $screen-lg) {
+      margin-top: 0;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 15px;
+    }
   }
+
   &--list {
     padding-left: 8px;
     list-style: none;
   }
+
   &--item {
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 15px;
-    line-height: 25px;
-    color: $color95;
+    line-height: 1.67;
+    color: $gray-95;
     vertical-align: middle;
     letter-spacing: -1px;
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 13px;
+    }
+
     &::before {
       content: '';
       position: relative;
@@ -682,9 +1125,10 @@ $color95: #959595;
       width: 4px;
       height: 4px;
       border-radius: 100%;
-      background-color: $color95;
+      background-color: $gray-95;
     }
   }
+
   &--add_box {
     max-width: 228px;
     height: 54px;
@@ -693,14 +1137,48 @@ $color95: #959595;
     text-transform: uppercase;
     vertical-align: middle;
     text-align: center;
-    font-family: 'Yeseva One';
-    background-color: $main-color;
-    color: $white;
+    font-family: $font-header;
+    background-color: $main_color;
+    color: $contrast_color;
     transform: translate(0, -50%);
+
+    @media (min-width: $screen-sm) and (max-width: $screen-lg) {
+      position: absolute;
+      width: 100%;
+      bottom: 0%;
+      transform: none;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      width: 190px;
+      height: 40px;
+      font-size: 15px;
+      line-height: 40px;
+    }
   }
 }
 
-@each $num, $deg in (1, -48deg), (2, -23deg), (3, 7deg), (4, 39deg) {
+.repair_types_container {
+  &--outer_wrap {
+    background-color: $contrast_color;
+
+    @media screen and (max-width: $screen-sm) {
+      padding-top: 59px;
+      margin-top: -82px;
+    }
+  }
+
+  &--card_list {
+    max-width: 1236px;
+    margin: 2.2% auto 1.5%;
+
+    @media screen and (max-width: $screen-sm) {
+      margin-top: 26px;
+    }
+  }
+}
+
+@each $num, $deg in (1, -47.7deg), (2, -23deg), (3, 7deg), (4, 38.6deg) {
   .ellipse_box--item:nth-child(#{$num}) {
     transform: translate(-50%, 50%) rotate($deg) translate(316px) rotate(-$deg);
   }
@@ -711,19 +1189,27 @@ $color95: #959595;
   max-width: 834px;
   width: 100%;
   background: url('../assets/images/building_bg.png') no-repeat 0 -60px;
+
   &--ellipse_box {
     margin-left: -150px;
+
+    @media screen and (max-width: $screen-xl) {
+      transform: scale(0.8);
+      margin-left: -350px;
+    }
   }
+
   &--adv_number {
-    font-family: 'Yeseva One';
-    color: $white;
+    font-family: $font-header;
+    color: $contrast_color;
     font-size: 18px;
   }
+
   &--adv_text {
-    font-family: 'Futura';
-    font-weight: bolder;
+    @extend %font-medium;
     font-size: 18px;
-    color: $color36;
+    color: $gray-36;
+    letter-spacing: -1px;
   }
 }
 
@@ -732,105 +1218,141 @@ $color95: #959595;
   width: 625px;
   height: 625px;
   border-radius: 50%;
-  border: 3px solid $main-color;
+  border: 3px solid $main_color;
+
   &--item {
     left: 50%;
     bottom: 50%;
     position: absolute;
     transform: translate(-50%, 50%);
+
     &:last-child {
       .ellipse_box--item_text {
         max-width: 205px;
       }
     }
   }
+
   &--marker {
     display: inline-block;
     width: 42px;
     height: 42px;
     line-height: 42px;
     border-radius: 100%;
-    background-color: $main-color;
+    background-color: $main_color;
     text-align: center;
     vertical-align: middle;
-    border: 10px solid $white;
+    border: 10px solid $contrast_color;
   }
+
   &--item_text {
     position: absolute;
     width: 410px;
     padding-left: 5px;
     transform: translate(0, 50%);
     bottom: 50%;
-    line-height: 21px;
-    font-family: 'Futura';
     font-size: 18px;
-    line-height: 21px;
-    font-weight: 500;
+    line-height: 1.17;
+    @extend %font-medium;
     letter-spacing: -1px;
-    color: $color36;
+    color: $gray-36;
   }
 }
 
 .bonus_container {
   max-width: 345px;
+
   &--icon_box {
     display: inline-block;
     width: 72px;
     height: 72px;
     margin-right: 6.5%;
     border-radius: 100%;
-    background-color: $main-color;
+    background-color: $main_color;
     line-height: 72px;
     text-align: center;
-    box-shadow: 0px 10px 20px rgba($main-color, 0.2);
+    box-shadow: 0px 10px 20px rgba($main_color, 0.2);
   }
+
   &--icon {
     vertical-align: middle;
   }
+
   &--offer {
     display: inline-block;
-    max-width: 240px;
+    max-width: 12em;
+    margin-top: -0.5em;
     vertical-align: middle;
-    font-family: 'Futura';
     font-size: 20px;
-    line-height: 25px;
-    font-weight: 500;
-    color: $main-color;
-    text-shadow: 0px 3px 10px rgba($main-color, 0.15);
+    line-height: 1.25;
+    letter-spacing: -1px;
+    @extend %font-medium;
+    color: $main_color;
+    text-shadow: 0px 3px 10px rgba($main_color, 0.15);
   }
 }
 
 .request_section {
   display: flex;
   overflow: hidden;
-  margin-bottom: 16.8%;
+  margin-bottom: 16.7%;
+
+  @media screen and (max-width: $screen-sm) {
+    margin: 0;
+  }
+
+  @media screen and (max-width: $screen-xs) {
+    display: none;
+  }
+
   &--advantages_container {
     flex: 1 0 auto;
+
+    @media screen and (max-width: $screen-xl) {
+      flex: 1 1 auto;
+      min-width: 500px;
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      display: none;
+    }
   }
+
   &--form_container {
     flex: 0 1 auto;
     max-width: 506px;
     width: 100%;
-    padding-top: 3.5%;
+    padding-top: 3.4%;
+
+    @media screen and (max-width: $screen-lg) {
+      margin: 0 auto;
+    }
   }
+
   &--form {
     max-width: 408px;
     margin-bottom: 7.8%;
-    padding: 4.8% 49px;
-    background: $color13;
+    padding: 5.2% 9.6%;
+    background: $gray-13;
     box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.05);
+
+    @media screen and (max-width: $screen-lg) {
+      margin-bottom: 3%;
+    }
   }
+
   &--form_title {
     display: block;
     max-width: 295px;
     margin: 0 auto;
-    padding-bottom: 9.5%;
-    font-family: 'Futura';
+    padding-bottom: 9.4%;
+    font-family: $font-regular;
     font-size: 20px;
-    line-height: 25px;
+    line-height: 1.25;
     text-align: center;
-    color: $white;
+    color: $contrast_color;
   }
+
   &--input_container {
     &:not(:nth-child(4)) {
       margin-bottom: 12.2%;
@@ -839,41 +1361,89 @@ $color95: #959595;
       padding-bottom: 7px;
     }
   }
+
   &--checkbox_container {
     justify-content: left;
     margin-top: 4.2%;
   }
+
   &--submit_button {
     display: block;
     max-width: 213px;
     margin-left: auto;
     margin-top: 9%;
   }
+
   &--bonus_container {
     margin-left: 6.5%;
+
+    @media screen and (max-width: $screen-lg) {
+      margin: 35px auto 0;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      display: none;
+    }
   }
 }
 
 .interiors_section {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 6.87%;
-  padding-right: 7%;
-  background: url('../assets/images/interiors_sec_bg.png') no-repeat,
+  padding: 0 1.5%;
+  background: url('../assets/images/interiors_sec_bg.png') no-repeat 50% 0,
     linear-gradient(120.96deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 100%);
   background-blend-mode: color;
+
+  @media screen and (max-width: $screen-lg) {
+    background: none;
+  }
+
+  &--inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1238px;
+    margin: 0 auto;
+
+    @media screen and (max-width: $screen-lg) {
+      flex-wrap: wrap;
+    }
+  }
+
   &--container {
     max-width: 300px;
-    padding-top: 9%;
+    padding-top: 9.3%;
+
+    @media screen and (max-width: $screen-lg) {
+      margin: 0 auto;
+      padding-top: 0;
+    }
   }
+
   &--slogan {
     margin-bottom: 13%;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 27px;
-    line-height: 37px;
+    line-height: 1.37;
     text-transform: uppercase;
-    color: $main-color;
+    color: $main_color;
+
+    @media screen and (max-width: $screen-lg) {
+      width: 100%;
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 0.8em;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      margin: 1.4em 0;
+    }
   }
+
+  &--interior_list {
+    @media screen and (max-width: $screen-lg) {
+      display: none;
+    }
+  }
+
   &--photos_area {
     display: flex;
     align-content: space-between;
@@ -882,42 +1452,90 @@ $color95: #959595;
     width: 100%;
     max-height: 1200px;
     margin-top: -9%;
+
+    @media screen and (max-width: $screen-lg) {
+      position: relative;
+      display: block;
+      max-width: none;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+    }
   }
+
   &--photo_wrapper {
     box-sizing: border-box;
     padding-bottom: 4.2%;
     padding-left: 5.4%;
     max-width: 50%;
+
     &:first-child {
       margin-top: 72px;
     }
+
     &:last-child {
       margin-bottom: 81px;
     }
+
+    @media screen and (max-width: $screen-lg) {
+      display: inline-block;
+      width: 100%;
+      max-width: none;
+      overflow: hidden;
+
+      &:nth-child(n) {
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
+
   &--photo {
     width: 100%;
+
+    @media screen and (max-width: $screen-lg) {
+      content: url('../assets/images/interiors_sec_bg.png');
+    }
+  }
+
+  &--slide_button {
+    @extend .carousel_container--slide_button;
+
+    @media screen and (min-width: $screen-lg) {
+      display: none;
+    }
+
+    &-back {
+      @extend .carousel_container--slide_button-back;
+    }
   }
 }
 
 .interior_list {
   padding-left: 0;
   list-style-type: none;
-  font-family: 'Proxima Nova';
+  font-family: $font-rare;
   font-size: 20px;
-  line-height: 34px;
-  color: $white;
+  line-height: 1.7;
+  color: $contrast_color;
+
+  @media screen and (max-width: $screen-lg) {
+    font-size: 16px;
+    line-height: 1.15;
+  }
+
   &--style_box {
     &:not(:last-child) {
       margin-bottom: 5%;
     }
   }
+
   &--style_name {
     &-active {
       box-sizing: border-box;
-      color: $main-color;
+      color: $main_color;
       padding-bottom: 2px;
-      border-bottom: 1px solid $main-color;
+      border-bottom: 1px solid $main_color;
     }
   }
 }
@@ -925,39 +1543,66 @@ $color95: #959595;
 .work_steps_section {
   display: flex;
   justify-content: space-between;
-  padding: 29.5% 7% 0 6.9%;
-  margin-top: -42.3%;
-  margin-bottom: 6%;
-  &--note {
-    font-family: 'Futura';
-    font-size: 15px;
-    line-height: 21px;
-    text-transform: uppercase;
-    color: $white;
+  max-width: 1240px;
+  margin: 0 auto 87px;
+
+  @media screen and (max-width: $screen-sm) {
+    display: none;
   }
+
+  &--outer_wrap {
+    margin-top: -613px;
+    padding-top: 423px;
+    @media screen and (max-width: $screen-lg) {
+      margin-top: -230px;
+      padding-top: 230px;
+    }
+  }
+
+  &--note {
+    font-family: $font-regular;
+    font-size: 15px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: $contrast_color;
+  }
+
   &--caption {
     position: relative;
     max-width: 6em;
-    margin-top: 4%;
+    margin-top: 4.6%;
     margin-bottom: 25.8%;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 27px;
-    line-height: 37px;
+    line-height: 1.37;
     text-transform: uppercase;
-    color: $main-color;
+    color: $main_color;
+
     &::after {
       content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='92px' height='2px' fill='red'><path d='M1 1 h 102 ' stroke='rgb(227, 184, 114)' stroke-width='2'/></svg>");
       position: absolute;
       top: 29px;
       left: 212px;
+
+      @media screen and (max-width: $screen-lg) {
+        display: none;
+      }
     }
   }
+
   &--slider {
     margin-top: 29.6%;
+
+    @media screen and (max-width: 1136px) {
+      display: none;
+    }
   }
+
   &--column_right {
     padding-top: 6%;
+    margin-left: 2em;
   }
+
   &--step_photo {
     margin-top: 8%;
     max-width: 100%;
@@ -966,53 +1611,96 @@ $color95: #959595;
 
 .step_details {
   &--cur_step_num {
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 18px;
-    line-height: 25px;
+    line-height: 1.39;
     text-transform: uppercase;
-    color: $white;
+    color: $contrast_color;
   }
+
   &--step_name {
     max-width: 15em;
-    margin-top: 5.3%;
+    margin-top: 6.3%;
     margin-bottom: 2.7%;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 15px;
-    line-height: 23px;
+    line-height: 1.53;
     text-transform: uppercase;
-    color: $main-color;
+    color: $main_color;
   }
+
   &--step_description {
     max-width: 22em;
     margin-top: 2.7%;
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 15px;
-    line-height: 25px;
+    line-height: 1.67;
     letter-spacing: -1px;
-    color: $white;
+    color: $contrast_color;
   }
 }
 
 .design_classes_container {
-  background-color: $white;
-  padding-top: 9.3%;
-  margin-top: -5.5%;
+  padding-top: 9.4%;
+  margin-top: -5.3%;
+
+  &--outer_wrap {
+    background-color: $contrast_color;
+
+    @media screen and (max-width: $screen-sm) {
+      background-color: $gray-13;
+      margin-top: -104px;
+      padding-top: 138px;
+    }
+  }
+
+  &--title {
+    @media screen and (max-width: $screen-sm) {
+      color: $contrast_color;
+    }
+  }
+
   &--info {
     max-width: 680px;
     padding-top: 1.4%;
     padding-bottom: 3.2%;
-    line-height: 27px;
+    line-height: 1.35;
     text-indent: 20px;
+
+    @media screen and (max-width: $screen-sm) {
+      max-width: 85%;
+      padding: 20px 0;
+      color: $contrast_color;
+      font-size: 15px;
+    }
   }
+
   &--card_list {
     max-width: 1236px;
-    .card--full_info {
-      top: -14.6%;
-    }
+
     .card_details--add_box {
       text-align: start;
       box-sizing: border-box;
       padding: 0 10.5%;
+    }
+  }
+
+  .card--full_info {
+    @media screen and (min-width: $screen-sm) {
+      top: -14.6%;
+    }
+  }
+
+  .card {
+    @media screen and (max-width: $screen-sm) {
+      margin-bottom: 108px;
+    }
+  }
+
+  .card_details {
+    @media screen and (max-width: $screen-sm) {
+      max-height: 241px;
+      overflow: hidden;
     }
   }
 }
@@ -1025,140 +1713,193 @@ $color95: #959595;
   align-items: baseline;
   column-gap: 1em;
   row-gap: 17%;
+
   &--item {
     opacity: 0.3;
+
     &-active {
       opacity: 1;
     }
+
     &:last-child {
       padding-top: 3.8%;
     }
+
     &:nth-child(3n + 1) {
       max-width: 115px;
       color: red;
     }
+
     &:nth-child(3n + 2) {
       max-width: 120px;
       justify-self: center;
       padding-left: 13px;
     }
+
     &:nth-child(3n) {
       max-width: 100px;
       justify-self: end;
     }
   }
+
   &--step_num {
     display: block;
     max-width: 1.1em;
     margin-bottom: 6%;
-    border-bottom: 1px solid $main-color;
-    font-family: 'Yeseva One';
+    border-bottom: 1px solid $main_color;
+    font-family: $font-header;
     font-size: 15px;
-    line-height: 21px;
+    line-height: 1.4;
     text-transform: uppercase;
-    color: $white;
+    color: $contrast_color;
   }
+
   &--step_name {
     display: block;
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 15px;
-    line-height: 18px;
+    line-height: 1.2;
     letter-spacing: -1px;
-    color: $white;
+    color: $contrast_color;
   }
 }
 
 .team_container {
+  &--title {
+    color: $contrast_color;
+
+    @media screen and (max-width: $screen-sm) {
+      margin-top: 62px;
+    }
+  }
+
   &--card_list {
     max-width: 1028px;
-    margin-bottom: -3.7%;
+    margin-bottom: -3.9%;
   }
+
   &--details {
     max-width: 22em;
     padding-top: 1.3%;
-    padding-bottom: 5.6%;
+    padding-bottom: 5.8%;
     line-height: 1.35;
+    color: $contrast_color;
+
+    @media screen and (max-width: $screen-sm) {
+      margin-top: 16px;
+      margin-bottom: 44px;
+      font-size: 15px;
+    }
   }
+
   &--info {
+    @media screen and (max-width: $screen-xs) {
+      display: none;
+    }
+
     &::before {
       content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='55px' height='2px' fill='red'><path d='M1 1 h 55 ' stroke='rgb(227, 184, 114)' stroke-width='2'/></svg>");
       display: block;
     }
     max-width: 23em;
   }
+
+  @media screen and (max-width: $screen-sm) {
+    font-size: 15px;
+  }
 }
 
 .worker_card {
+  display: block;
   position: relative;
   max-width: 272px;
+
   &--corner_icon_box {
     position: absolute;
     width: 70px;
     height: 70px;
-    background-color: $main-color;
+    background-color: $main_color;
     transform: translate(-50%, -50%);
     line-height: 70px;
   }
+
   &--corner_icon {
     vertical-align: middle;
     text-align: center;
+    width: 65%;
   }
+
   &--image {
     width: 100%;
   }
+
   &--full_info {
     position: relative;
-    top: -83px;
+    top: -84px;
     max-width: 233px;
     width: 100%;
     margin: 0 auto;
     padding-top: 8%;
-    background: $white;
+    background: $contrast_color;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
   }
+
   &--name {
     margin: 0;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 18px;
-    line-height: 25px;
+    line-height: 1.39;
     text-align: center;
-    color: $color18;
+    color: $gray-18;
   }
+
   &--profession {
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 18px;
-    line-height: 26px;
+    line-height: 1.44;
     letter-spacing: -1px;
     text-align: center;
-    color: $color95;
+    color: $gray-95;
   }
+
   &--add_box {
     width: 100%;
     height: 44px;
     line-height: 44px;
     margin-top: 8.5%;
-    background-color: $main-color;
+    background-color: $main_color;
   }
+
   &--add_text {
     display: inline-block;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 1.54;
     text-align: center;
     text-transform: uppercase;
-    color: $white;
+    color: $contrast_color;
   }
 }
 
 .clients_container {
-  margin-top: -29.8%;
-  padding-top: 35.3%;
-  padding-bottom: 26.9%;
+  padding-bottom: 27%;
+
+  &--outer_wrap {
+    background-color: $contrast_color;
+    margin-top: -427px;
+    padding-top: 509px;
+
+    @media screen and (max-width: $screen-xs) {
+      display: none;
+    }
+  }
+
   &--info {
     max-width: 18em;
     padding-top: 1.2%;
-    line-height: 27px;
+    line-height: 1.35;
   }
+
   &--card_list {
     max-width: 1236px;
     margin-top: 3.4%;
@@ -1166,14 +1907,18 @@ $color95: #959595;
 }
 
 .client_card {
+  position: relative;
+  display: block;
   max-width: 376px;
   text-align: left;
+
   &--main {
     height: 90.4%;
     padding: 6% 5.8%;
-    background: $white;
+    background: $contrast_color;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04);
   }
+
   &--avatar {
     text-align: left;
     display: inline-block;
@@ -1183,23 +1928,26 @@ $color95: #959595;
     vertical-align: middle;
     border-radius: 100%;
   }
+
   &--name {
     display: inline-block;
     max-width: 9em;
     margin: 0;
     vertical-align: middle;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 18px;
-    line-height: 23px;
-    color: $color18;
+    line-height: 1.28;
+    color: $gray-18;
   }
+
   &--feedback {
-    font-family: 'Futura';
+    font-family: $font-regular;
     font-size: 15px;
     line-height: 1.8;
     letter-spacing: -0.8px;
-    color: $color95;
+    color: $gray-95;
   }
+
   &--add_box {
     transform: translate(0, -50%);
   }
@@ -1210,9 +1958,10 @@ $color95: #959595;
   flex-wrap: wrap;
   align-items: center;
   max-width: 294px;
-  background: $main-color;
-  box-shadow: 5px 5px 20px rgba($main-color, 0.5);
+  background: $main_color;
+  box-shadow: 5px 5px 20px rgba($main_color, 0.5);
   font-size: 0;
+
   &--sector {
     box-sizing: border-box;
     flex-grow: 1;
@@ -1220,8 +1969,9 @@ $color95: #959595;
     height: 54px;
     padding: 0 6px;
     line-height: 54px;
-    border-right: 1px solid $white;
+    border-right: 1px solid $contrast_color;
     text-indent: 8%;
+
     &:last-child {
       max-width: 159px;
       border: none;
@@ -1230,12 +1980,14 @@ $color95: #959595;
       }
     }
   }
+
   &--text {
     box-sizing: border-box;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 17px;
     text-transform: uppercase;
-    color: $white;
+    color: $contrast_color;
+
     &::before {
       content: url('../assets/icons/graph.svg');
       display: inline-block;
@@ -1248,8 +2000,8 @@ $color95: #959595;
 }
 
 .contacts_section {
-  padding-top: 9.3%;
-  padding-bottom: 4.2%;
+  padding-top: 135px;
+  padding-bottom: 58px;
   background: url('../assets/images/bg.png') no-repeat,
     linear-gradient(
       180deg,
@@ -1257,13 +2009,33 @@ $color95: #959595;
       rgba(24, 24, 24, 0.72) 100%
     );
   background-blend-mode: color;
+
+  @media screen and (max-width: $screen-lg) {
+    margin-top: -500px;
+    padding-top: calc(400px - 15%);
+    padding-bottom: 0;
+    background: none;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    padding: 0;
+    margin: 0;
+  }
+
   &--form_container {
     box-sizing: border-box;
     max-width: 883px;
-    margin: -24.8% auto 3.6%;
+    margin: -360px auto 3.8%;
     padding: 2.2% 5%;
-    background-color: $color18;
+    background-color: $gray-18;
+
+    @media screen and (max-width: $screen-lg) {
+      max-width: initial;
+      margin: 1em 0;
+      background-color: $gray-13;
+    }
   }
+
   &--form {
     display: flex;
     justify-content: center;
@@ -1271,48 +2043,71 @@ $color95: #959595;
     max-width: 520px;
     margin: 0 auto;
   }
+
   &--form_title {
     flex: 1 0 100%;
     margin-bottom: 8.2%;
-    font-family: 'Yeseva One';
+    width: 100%;
+    font-family: $font-header;
     font-size: 20px;
-    line-height: 28px;
+    line-height: 1.4;
     text-align: center;
     text-transform: uppercase;
-    color: $white;
+    color: $contrast_color;
+
+    @media screen and (max-width: $screen-sm) {
+      margin: -50px 0 50px;
+    }
   }
+
   &--input_container {
     display: inline-block;
     flex: 0.5 1 auto;
     margin-bottom: 9%;
+
     &:first-of-type {
       margin-right: 10%;
     }
+
     &:nth-of-type(3) {
       flex: 1 0 100%;
     }
+
+    @media screen and (max-width: $screen-xs) {
+      width: 100%;
+      margin-bottom: 62px;
+    }
   }
+
   &--checkbox_container {
     flex: 1 0 100%;
   }
+
   &--submit_button {
     flex: 1 0 100%;
     max-width: 200px;
-    margin-top: 8.8%;
+    margin-top: 9.1%;
+
+    @media screen and (max-width: $screen-xs) {
+      max-width: initial;
+    }
   }
+
   &--info {
     display: block;
-    font-family: 'Yeseva One';
+    font-family: $font-header;
     font-size: 20px;
-    line-height: 28px;
+    line-height: 1.4;
     text-align: center;
     text-transform: uppercase;
-    color: $main-color;
+    color: $main_color;
   }
+
   &--socials {
-    margin: 1.8% auto 2.9%;
+    margin: 1.6% auto 3%;
     text-align: center;
   }
+
   &--location_box {
     margin: 0 auto;
   }
@@ -1320,6 +2115,7 @@ $color95: #959595;
 
 .location_box {
   max-width: 925px;
+
   &--map {
     width: 100%;
   }
@@ -1327,29 +2123,55 @@ $color95: #959595;
 
 .socials {
   font-size: 0;
+
   &--item_link {
     display: inline-block;
     width: 28px;
     height: 28px;
-    background-color: $main-color;
+    background-color: $main_color;
     border-radius: 100%;
     line-height: 28px;
     text-align: center;
+
     &:not(:last-child) {
       margin-right: 15px;
     }
   }
+
   &--icon {
     vertical-align: middle;
   }
 }
 
 .footer {
-  @extend .header;
-  padding: 50px 5% 50px 6.3%;
   background: linear-gradient(
     180deg,
     rgba(24, 24, 24, 0.9) 3.47%,
     rgba(24, 24, 24, 0.72) 100%
   );
+
+  @media screen and (max-width: $screen-xs) {
+    display: none;
+  }
+
+  &--wrapper {
+    @extend .header--wrapper;
+    padding: 50px 1.5% 50px 2.8%;
+  }
+
+  &--logo {
+    @extend .header--logo;
+  }
+
+  &--nav_box {
+    @extend .header--nav_box;
+  }
+
+  &--contact_number {
+    @extend .header--contact_number;
+  }
+
+  &--call_button {
+    @extend .header--call_button;
+  }
 }

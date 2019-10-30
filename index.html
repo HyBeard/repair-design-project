@@ -7,9 +7,9 @@
     <title>repair-design-project</title>
   </head>
   <body class="body">
-    <div class="wrap">
-      <div class="wrap--content">
-        <header class="header">
+    <header class="header">
+      <div class="wrap">
+        <div class="wrap--content header--wrapper">
           <span class="header--logo logo">IC "Repair Design Project"</span>
           <div class="header--nav_box">
             <nav class="navbar">
@@ -27,12 +27,12 @@
           <button class="header--call_button button button-size-s">
             Request a call
           </button>
-        </header>
+        </div>
       </div>
-    </div>
+    </header>
     <main class="main">
       <div class="wrap">
-        <div class="wrap--content">
+        <div class="wrap--content promo_section--outer_wrap">
           <section class="promo_section">
             <div class="promo_section--socials_box">
               <a href="#" class="promo_section--social_link">INSTAGRAM</a>
@@ -64,6 +64,8 @@
               <a href="#" class="scroll_button--text">Scroll down</a>
             </div>
           </section>
+        </div>
+        <div class="wrap--content work_examples_section--outer_wrap">
           <section class="work_examples_section section">
             <ul class="work_examples_section--project_names project_list">
               <li class="project_list--item">
@@ -135,13 +137,18 @@
                   alt="project_example_2"
                 />
                 <div
-                  class="slide_button carousel_container--slide_button"
+                  class="slide_button slide_button-back carousel_container--slide_button carousel_container--slide_button-back"
                 ></div>
               </div>
+              <div class="slide_button carousel_container--slide_button"></div>
             </div>
           </section>
+        </div>
+      </div>
+      <div class="wrap broadcast_container--outer_wrap">
+        <div class="wrap--content">
           <div class="broadcast_container main_container">
-            <h3 class="main_container--title main_container--title-on_dark_bg">
+            <h3 class="main_container--title broadcast_container--title">
               online control
             </h3>
             <img
@@ -173,11 +180,6 @@
               request below and you will receive a link to the broadcast.
             </p>
           </div>
-        </div>
-      </div>
-
-      <div class="wrap-color-white">
-        <div class="wrap--content">
           <div class="broadcast_container--form_container">
             <form action="#" method="GET" class="broadcast_container--form">
               <div class="input_container broadcast_container--input_container">
@@ -187,7 +189,7 @@
                   type="text"
                   id="name1"
                   placeholder="What is your name"
-                  pattern='\w+'
+                  pattern="\w+"
                   required
                 />
               </div>
@@ -198,7 +200,7 @@
                   type="tel"
                   id="phone"
                   placeholder="Your phone number:"
-                  pattern=''
+                  pattern=""
                   required
                 />
               </div>
@@ -224,7 +226,10 @@
               </div>
             </form>
           </div>
-
+        </div>
+      </div>
+      <div class="repair_types_container--outer_wrap">
+        <div class="wrap--content">
           <div class="repair_types_container main_container">
             <h3 class="main_container--title">
               TYPES OF REPAIR
@@ -236,11 +241,13 @@
             />
             <ul class="card_list repair_types_container--card_list">
               <li class="card card_list--item">
-                <img
-                  src="./assets/images/redecorating.png"
-                  alt="redecorating_type"
-                  class="card--image"
-                />
+                <div class="card--image_container">
+                  <img
+                    src="./assets/images/redecorating.png"
+                    alt="redecorating_type"
+                    class="card--image"
+                  />
+                </div>
                 <div class="card--full_info">
                   <div class="card_details">
                     <h4 class="card_details--title">Redecorating</h4>
@@ -268,11 +275,13 @@
                 </div>
               </li>
               <li class="card card_list--item">
-                <img
-                  src="./assets/images/overhaul.png"
-                  alt="overhaul_type"
-                  class="card--image"
-                />
+                <div class="card--image_container">
+                  <img
+                    src="./assets/images/overhaul.png"
+                    alt="overhaul_type"
+                    class="card--image"
+                  />
+                </div>
                 <div class="card--full_info">
                   <div class="card_details">
                     <h4 class="card_details--title">Overhaul</h4>
@@ -300,11 +309,13 @@
                 </div>
               </li>
               <li class="card card_list--item">
-                <img
-                  src="./assets/images/des_repair.png"
-                  alt="designer_repair_type"
-                  class="card--image"
-                />
+                <div class="card--image_container">
+                  <img
+                    src="./assets/images/des_repair.png"
+                    alt="designer_repair_type"
+                    class="card--image"
+                  />
+                </div>
                 <div class="card--full_info">
                   <div class="card_details">
                     <h4 class="card_details--title">Designer Repair</h4>
@@ -390,7 +401,7 @@
                     type="text"
                     name="name"
                     id="name"
-                    pattern='\w+'
+                    pattern="\w+"
                     placeholder="What is your name:"
                     required
                   />
@@ -404,7 +415,7 @@
                     type="tel"
                     name="phone number"
                     id="phone1"
-                    pattern=''
+                    pattern=""
                     placeholder="Your phone number:"
                     required
                   />
@@ -418,7 +429,7 @@
                     type="email"
                     name="email"
                     id="email"
-                    pattern=''
+                    pattern=""
                     placeholder="Your email"
                     required
                   />
@@ -460,87 +471,99 @@
               </div>
             </div>
           </section>
-          <section class="interiors_section">
-            <div class="interiors_section--container">
-              <h2 class="interiors_section--slogan">
-                We realize your wildest fantasies
-              </h2>
-              <ul class="interior_list">
-                <li class="interior_list--style_box">
-                  <span
-                    class="interior_list--style_name  interior_list--style_name-active"
-                    >American classic</span
-                  >
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name">Empire</span>
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name">Classical</span>
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name">Loft</span>
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name">Minimalism</span>
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name">Provence</span>
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name">Romanticism</span>
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name"
-                    >Scandinavian style</span
-                  >
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name"
-                    >Mediterranean style</span
-                  >
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name">High tech</span>
-                </li>
-                <li class="interior_list--style_box">
-                  <span class="interior_list--style_name">Eclecticism</span>
-                </li>
-              </ul>
+        </div>
+      </div>
+      <section class="interiors_section">
+        <div class="interiors_section--inner">
+          <div class="interiors_section--container">
+            <h2 class="interiors_section--slogan">
+              We realize your wildest fantasies
+            </h2>
+            <ul class="interior_list interiors_section--interior_list">
+              <li class="interior_list--style_box">
+                <span
+                  class="interior_list--style_name  interior_list--style_name-active"
+                  >American classic</span
+                >
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name">Empire</span>
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name">Classical</span>
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name">Loft</span>
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name">Minimalism</span>
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name">Provence</span>
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name">Romanticism</span>
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name"
+                  >Scandinavian style</span
+                >
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name"
+                  >Mediterranean style</span
+                >
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name">High tech</span>
+              </li>
+              <li class="interior_list--style_box">
+                <span class="interior_list--style_name">Eclecticism</span>
+              </li>
+            </ul>
+          </div>
+          <div class="interiors_section--photos_area">
+            <div class="interiors_section--photo_wrapper">
+              <img
+                src="./assets/images/interior1.png"
+                alt="interior1"
+                class="interiors_section--photo"
+              />
             </div>
-            <div class="interiors_section--photos_area">
-              <div class="interiors_section--photo_wrapper">
-                <img
-                  src="./assets/images/interior1.png"
-                  alt="interior1"
-                  class="interiors_section--photo"
-                />
-              </div>
-              <div class="interiors_section--photo_wrapper">
-                <img
-                  src="./assets/images/interior2.png"
-                  alt="interior2"
-                  class="interiors_section--photo"
-                />
-              </div>
-              <div class="interiors_section--photo_wrapper">
-                <img
-                  src="./assets/images/interior3.png"
-                  alt="interior3"
-                  class="interiors_section--photo"
-                />
-              </div>
-              <div class="interiors_section--photo_wrapper">
-                <img
-                  src="./assets/images/interior4.png"
-                  alt="interior4"
-                  class="interiors_section--photo"
-                />
-              </div>
+            <div class="interiors_section--photo_wrapper">
+              <img
+                src="./assets/images/interior2.png"
+                alt="interior2"
+                class="interiors_section--photo"
+              />
             </div>
-          </section>
+            <div class="interiors_section--photo_wrapper">
+              <img
+                src="./assets/images/interior3.png"
+                alt="interior3"
+                class="interiors_section--photo"
+              />
+            </div>
+            <div class="interiors_section--photo_wrapper">
+              <img
+                src="./assets/images/interior4.png"
+                alt="interior4"
+                class="interiors_section--photo"
+              />
+            </div>
+            <div
+              class="slide_button slide_button-back interiors_section--slide_button interiors_section--slide_button-back"
+            ></div>
+            <div class="slide_button interiors_section--slide_button"></div>
+          </div>
+        </div>
+      </section>
+      <div class="wrap design_classes_container--outer_wrap">
+        <div class="wrap--content">
           <div class="design_classes_container main_container">
-            <h2 class="main_container--title">design project</h2>
+            <h2 class="main_container--title design_classes_container--title">
+              design project
+            </h2>
             <img
               src="./assets/icons/design.svg"
               alt="design_classes_container_icon"
@@ -552,12 +575,14 @@
               and reduces the time of repair work.
             </p>
             <ul class="card_list design_classes_container--card_list">
-              <li class="card_list--item">
-                <img
-                  src="./assets/images/redecorating.png"
-                  alt="mini_design_ex"
-                  class="card--image"
-                />
+              <li class="card card_list--item">
+                <div class="card--image_container">
+                  <img
+                    src="./assets/images/redecorating.png"
+                    alt="mini_design_ex"
+                    class="card--image"
+                  />
+                </div>
                 <div class="card--full_info">
                   <div class="card_details">
                     <h4 class="card_details--title">Mini</h4>
@@ -575,12 +600,14 @@
                   </div>
                 </div>
               </li>
-              <li class="card_list--item">
-                <img
-                  src="./assets/images/standard_design.png"
-                  alt="standard_design_ex"
-                  class="card--image"
-                />
+              <li class="card card_list--item">
+                <div class="card--image_container">
+                  <img
+                    src="./assets/images/standard_design.png"
+                    alt="standard_design_ex"
+                    class="card--image"
+                  />
+                </div>
                 <div class="card--full_info">
                   <div class="card_details">
                     <h4 class="card_details--title">Standard</h4>
@@ -599,12 +626,14 @@
                   </div>
                 </div>
               </li>
-              <li class="card_list--item">
-                <img
-                  src="./assets/images/full_design.png"
-                  alt="full_design_ex"
-                  class="card--image"
-                />
+              <li class="card card_list--item">
+                <div class="card--image_container">
+                  <img
+                    src="./assets/images/full_design.png"
+                    alt="full_design_ex"
+                    class="card--image"
+                  />
+                </div>
                 <div class="card--full_info">
                   <div class="card_details">
                     <h4 class="card_details--title">Full</h4>
@@ -634,8 +663,7 @@
           </div>
         </div>
       </div>
-
-      <div class="wrap">
+      <div class="wrap work_steps_section--outer_wrap">
         <div class="wrap--content">
           <section class="work_steps_section section">
             <div class="work_steps_section--column_left">
@@ -716,7 +744,7 @@
             </div>
           </section>
           <div class="team_container main_container">
-            <h2 class="main_container--title main_container--title-on_dark_bg">
+            <h2 class="main_container--title team_container--title">
               our team
             </h2>
             <img
@@ -724,9 +752,7 @@
               alt="team_icon"
               class="main_container--icon"
             />
-            <p
-              class="main_container--info main_container--info-on_dark_bg team_container--details"
-            >
+            <p class="main_container--info team_container--details">
               Our team has helped to become happier for more than 500 families
               and we are not going to stop
             </p>
@@ -816,7 +842,7 @@
           </div>
         </div>
       </div>
-      <div class="wrap wrap-color-white">
+      <div class="wrap clients_container--outer_wrap">
         <div class="wrap--content">
           <div class="clients_container main_container">
             <h2 class="main_container--title">our clients</h2>
@@ -937,7 +963,7 @@
                     type="text"
                     name="name"
                     id="name2"
-                    pattern='\w+'
+                    pattern="\w+"
                     placeholder="What is your name:"
                     required
                   />
@@ -951,7 +977,7 @@
                     type="tel"
                     name="phone number"
                     id="phone2"
-                    pattern=''
+                    pattern=""
                     placeholder="Your phone number:"
                     required
                   />
@@ -965,7 +991,7 @@
                     type="text"
                     name="question"
                     id="question"
-                    pattern=''
+                    pattern=""
                     placeholder="I want to know"
                     required
                   />
@@ -1025,11 +1051,11 @@
         </div>
       </div>
     </main>
-    <div class="wrap">
-      <div class="wrap--content">
-        <footer class="footer">
-          <span class="header--logo logo">IC "Repair Design Project"</span>
-          <div class="header--nav_box">
+    <footer class="footer">
+      <div class="wrap">
+        <div class="wrap--content footer--wrapper">
+          <span class="footer--logo logo">IC "Repair Design Project"</span>
+          <div class="footer--nav_box">
             <nav class="navbar">
               <a href="#" class="navbar--link navbar--link-active">HOME</a>
               <a href="#" class="navbar--link">PROJECTS</a>
@@ -1039,14 +1065,14 @@
               <a href="#" class="navbar--link">CONTACTS</a>
             </nav>
           </div>
-          <a class="header--contact_number" href="tel:+79287683239"
+          <a class="footer--contact_number" href="tel:+79287683239"
             >+7 (928) 768-32-39</a
           >
-          <button class="header--call_button button button-size-s">
+          <button class="footer--call_button button button-size-s">
             Request a call
           </button>
-        </footer>
+        </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
