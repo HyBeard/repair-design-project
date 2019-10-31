@@ -43,18 +43,26 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'images/[name][hash].[ext]'
+              name: 'images/[folder]_[name].[ext]'
             }
           }
         ]
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        test: /\.(eot|ttf|woff|woff2)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: 'fonts/[name][hash].[ext]'
+            name: 'fonts/[folder]_[name].[ext]'
           }
+        }
+      },
+
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'file-loader',
+          options: { name: 'icons/[folder]_[name].[ext]' }
         }
       }
     ]
@@ -62,9 +70,11 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, './index.html'),
+      template: path.resolve(__dirname, 'src/index.html'),
       inject: 'body'
     }),
-    new MiniCssExtractPlugin({})
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    })
   ]
 };

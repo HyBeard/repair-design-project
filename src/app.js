@@ -1,4 +1,4 @@
-import '../sass/main.scss';
+import './styles/sass/main.scss';
 
 const [playButton] = document.getElementsByClassName('video_box--play_button');
 const [videoPoster] = document.getElementsByClassName('video_box--poster');
