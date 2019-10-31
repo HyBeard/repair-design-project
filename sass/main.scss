@@ -69,12 +69,13 @@ $font-header: 'Yeseva One', 'Georgia', serif;
 }
 
 .logo {
+  @extend %font-medium;
   font-size: 14px;
   line-height: 2.64;
-  @extend %font-medium;
   text-transform: uppercase;
   color: $main_color;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .navbar {
@@ -92,6 +93,12 @@ $font-header: 'Yeseva One', 'Georgia', serif;
 
     @media screen and (max-width: $screen-lg) {
       font-size: 12px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid;
+      padding-bottom: 6px;
+      margin-bottom: -7px;
     }
 
     &-active {
@@ -121,6 +128,12 @@ $font-header: 'Yeseva One', 'Georgia', serif;
   border-radius: 2px;
   border: none;
   letter-spacing: -1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($main_color, 10);
+    transition: 0.3s;
+  }
 
   &-size-s {
     width: 161px;
@@ -166,9 +179,9 @@ $font-header: 'Yeseva One', 'Georgia', serif;
   &--contact_number {
     border-bottom: 1px solid $main_color;
     white-space: nowrap;
+    @extend %font-medium;
     font-size: 14px;
     line-height: 1.14;
-    @extend %font-medium;
     color: $main_color;
     word-spacing: -1px;
     text-decoration: none;
@@ -226,9 +239,9 @@ $font-header: 'Yeseva One', 'Georgia', serif;
 
   &--social_link {
     display: inline-block;
+    @extend %font-medium;
     font-size: 14px;
     line-height: 1.14;
-    @extend %font-medium;
     color: $main_color;
     text-decoration: none;
     writing-mode: vertical-rl;
@@ -239,6 +252,12 @@ $font-header: 'Yeseva One', 'Georgia', serif;
 
     @media screen and (max-width: $screen-sm) {
       display: none;
+    }
+
+    &:hover {
+      border-left: 1px solid;
+      padding-left: 6px;
+      margin-left: -7px;
     }
 
     &::after {
@@ -273,6 +292,10 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     bottom: 0;
     left: 0;
     transform: translate(0, 50%);
+
+    &:hover {
+      transform: translate(0, 50%) scale(1.1);
+    }
   }
 
   &--special_offer {
@@ -287,6 +310,8 @@ $font-header: 'Yeseva One', 'Georgia', serif;
   width: 247px;
   height: 97px;
   background: $gray-13;
+  cursor: pointer;
+  transition: 0.3;
 
   @media screen and (max-width: $screen-sm) {
     display: none;
@@ -362,6 +387,11 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     background-color: transparent;
     border: 1px solid $contrast_color;
 
+    &:hover {
+      color: $main_color;
+      background-color: transparent;
+    }
+
     @media screen and (max-width: $screen-xs) {
       max-width: initial;
     }
@@ -388,11 +418,21 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     font-size: 14px;
     line-height: 1.36;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.3);
+    color: $contrast_color;
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 0.7;
+    }
 
     &-active {
       color: $main_color;
       border-bottom: 1px solid $main_color;
+      opacity: 1;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
@@ -604,6 +644,8 @@ $font-header: 'Yeseva One', 'Georgia', serif;
 .arrow_slider {
   padding-left: 0;
   list-style-type: none;
+  user-select: none;
+  cursor: default;
 
   &--breakpoint {
     display: inline-block;
@@ -614,6 +656,11 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     font-size: 0;
     background-color: $contrast_color;
     opacity: 0.3;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
 
     &-active {
       opacity: 1;
@@ -627,6 +674,7 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     height: 13px;
     transform: rotate(180deg);
     margin-left: 18px;
+    cursor: pointer;
   }
 
   &::before {
@@ -635,6 +683,7 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     width: 42px;
     height: 13px;
     margin-right: 18px;
+    cursor: pointer;
   }
 }
 
@@ -706,14 +755,24 @@ $font-header: 'Yeseva One', 'Georgia', serif;
   box-shadow: 0px 0px 15px rgba($main_color, 0.5);
   background-blend-mode: color-dodge;
   transform: rotate(-90deg);
+  cursor: pointer;
+  transition: 0.3s;
 
   @media screen and (max-width: $screen-sm) {
     width: 36px;
     height: 36px;
   }
 
+  &:hover {
+    transform: rotate(-90deg) scale(1.1);
+  }
+
   &-back {
     transform: rotate(90deg);
+
+    &:hover {
+      transform: rotate(90deg) scale(1.1);
+    }
   }
 }
 
@@ -766,24 +825,24 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     border: none;
     border-bottom: 1px solid rgba($contrast_color, 0.5);
     background-color: transparent;
+    @extend %font-medium;
     font-size: 18px;
     line-height: 1;
-    @extend %font-medium;
     letter-spacing: -1px;
     color: $contrast_color;
 
+    &:focus {
+      outline: none;
+      border-color: $main_color;
+    }
+
     &::placeholder {
+      @extend %font-medium;
       font-size: 18px;
       line-height: 1;
-      @extend %font-medium;
       color: $contrast_color;
       letter-spacing: -1px;
     }
-  }
-
-  &:focus {
-    outline: none;
-    border-color: $main_color;
   }
 }
 
@@ -797,15 +856,17 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     height: 18px;
     background-color: $main_color;
     color: $contrast_color;
-    margin-right: 5px;
+    cursor: pointer;
   }
 
   &--checkbox_title {
+    padding-left: 5px;
     font-family: $font-regular;
     font-size: 16px;
     line-height: 1.375;
     color: $contrast_color;
     letter-spacing: -1px;
+    cursor: pointer;
   }
 }
 
@@ -972,10 +1033,16 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     transform: translate(-50%, -50%);
     border-radius: 85px;
     background: url('../assets/icons/polygon.svg') no-repeat 50% 50% $main_color;
+    cursor: pointer;
 
     @media screen and (max-width: $screen-sm) {
       width: 37px;
       height: 37px;
+    }
+
+    &:hover {
+      transform: scale(1.1) translate(-45%, -45%);
+      transition: 0.2s;
     }
   }
 }
@@ -1251,9 +1318,9 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     padding-left: 5px;
     transform: translate(0, 50%);
     bottom: 50%;
+    @extend %font-medium;
     font-size: 18px;
     line-height: 1.17;
-    @extend %font-medium;
     letter-spacing: -1px;
     color: $gray-36;
   }
@@ -1283,10 +1350,10 @@ $font-header: 'Yeseva One', 'Georgia', serif;
     max-width: 12em;
     margin-top: -0.5em;
     vertical-align: middle;
+    @extend %font-medium;
     font-size: 20px;
     line-height: 1.25;
     letter-spacing: -1px;
-    @extend %font-medium;
     color: $main_color;
     text-shadow: 0px 3px 10px rgba($main_color, 0.15);
   }
@@ -1525,6 +1592,7 @@ $font-header: 'Yeseva One', 'Georgia', serif;
   }
 
   &--style_box {
+    cursor: pointer;
     &:not(:last-child) {
       margin-bottom: 5%;
     }
@@ -1716,9 +1784,18 @@ $font-header: 'Yeseva One', 'Georgia', serif;
 
   &--item {
     opacity: 0.3;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
 
     &-active {
       opacity: 1;
+
+      &:hover {
+        opacity: initial;
+      }
     }
 
     &:last-child {
